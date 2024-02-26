@@ -28,9 +28,11 @@ Malvi is a first-year PhD student in Speech Language Hearing Sciences.
 
 ## Chenqi Wang
 
-Chenqi is a junior undergraudate student in Data Science.
+Chenqi is a junior undergraduate student in Data Science.
 
 ## Sizhe Zhang
+
+Sizhe is a senior undergraduate student in Psychology.
 
 ## Yan Wang
 

@@ -35,6 +35,7 @@ Chenqi is a junior undergraduate student in Data Science.
 Sizhe is a senior undergraduate student in Psychology.
 
 ## Yan Wang
+Yan Wang is a undergraduate student in Statistics.
 
 <!-- Please leave in the information below -->
 

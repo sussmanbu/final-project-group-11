@@ -6,3 +6,9 @@ date-modified: "2024-02-28"
 draft: FALSE
 ---
 
+## Data Set 1: 
+https://catalog.data.gov/dataset/mental-health-care-in-the-last-4-weeks
+- Data on the social and economic impacts of Covid-19 on American households
+- They looked at the pandemic’s effect on people’s employment status, consumer spending, food security, housing, education disruptions, and dimensions of physical and mental wellness.
+- The dataset was created in 2020, and was mostly recently updated in 2023
+- It was created by the Centers for Disease Control and Prevention (CDC)

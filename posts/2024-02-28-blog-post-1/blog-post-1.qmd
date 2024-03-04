@@ -6,9 +6,43 @@ date-modified: "2024-02-28"
 draft: FALSE
 ---
 
-## Data Set 1: 
+## Data Set 1: Mental Health
+
 https://catalog.data.gov/dataset/mental-health-care-in-the-last-4-weeks
+
 - Data on the social and economic impacts of Covid-19 on American households
+
 - They looked at the pandemic’s effect on people’s employment status, consumer spending, food security, housing, education disruptions, and dimensions of physical and mental wellness.
+
 - The dataset was created in 2020, and was mostly recently updated in 2023
+
 - It was created by the Centers for Disease Control and Prevention (CDC)
+
+## Data Set 2: Mental Health
+
+https://catalog.data.gov/dataset/indicators-of-anxiety-or-depression-based-on-reported-frequency-of-symptoms-during-last-7- 
+
+- It is collected by the National Center for Health Statistics (NCHS) and the Census Bureau.
+
+- The questions are a modified version of the two-item Patient Health Questionnaire (PHQ-2) and the two-item Generalized Anxiety Disorder (GAD-2) scale on the Household Pulse Survey.
+
+- Indicators of anxiety & depression based on reported frequency of symptoms.
+
+- This dataset includes information about age, gender, races, education level, disability status, and state.
+
+## Data Set 3: Salary Level
+
+https://catalog.data.gov/dataset/current-population-survey-cps-weekly-and-hourly-earnings-8d283
+
+- Conducted by the Bureau of Census for the Bureau of Labor Statistics.
+
+- Earnings data collected from one-fourth of the CPS total sample of approximately 60,000 households.
+Covers all 50 States.
+
+- 9 different tables looking at salaries based on race, gender, age, education, part time/full time, and occupation.
+
+- We can look to draw conclusions about average salary depending on these factors or two at the same time such as occupation and race.
+
+- Tables tend to average around 8 columns by 12 rows.
+
+- A challenge might be to combine/load all tables into r studio Data appears very clean.

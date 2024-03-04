@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This comes from the file about.qmd.\nThis is a website for the final project for MA[46]15 Data Science with R by Team Group 11. The members of this team are below."
+  },
+  {
+    "objectID": "about.html#malvika-khandelwal",
+    "href": "about.html#malvika-khandelwal",
+    "title": "About",
+    "section": "Malvika Khandelwal",
+    "text": "Malvika Khandelwal\nMalvi is a first-year PhD student in Speech Language Hearing Sciences."
+  },
+  {
+    "objectID": "about.html#chenqi-wang",
+    "href": "about.html#chenqi-wang",
+    "title": "About",
+    "section": "Chenqi Wang",
+    "text": "Chenqi Wang\nChenqi is a junior undergraduate student in Data Science."
+  },
+  {
+    "objectID": "about.html#sizhe-zhang",
+    "href": "about.html#sizhe-zhang",
+    "title": "About",
+    "section": "Sizhe Zhang",
+    "text": "Sizhe Zhang\nSizhe is a senior undergraduate student in Psychology."
+  },
+  {
+    "objectID": "about.html#yan-wang",
+    "href": "about.html#yan-wang",
+    "title": "About",
+    "section": "Yan Wang",
+    "text": "Yan Wang\n\n\nAbout this Template.\nThis is based off of the standard Quarto website template from RStudio (2023.09.0 Build 463)."
+  }
+]

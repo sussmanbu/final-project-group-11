@@ -33,5 +33,40 @@
     "title": "About",
     "section": "Yan Wang",
     "text": "Yan Wang\n\n\nAbout this Template.\nThis is based off of the standard Quarto website template from RStudio (2023.09.0 Build 463)."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MA [46]15 Final Project",
+    "section": "",
+    "text": "Final Project due May 7, 2024 at 11:59pm.\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nBlog Post 1\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\n\n\n\n\n  \n\n\n\n\nExamples\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 26, 2024\n\n\nDaniel Sussman\n\n\n\n\n\n\n  \n\n\n\n\nGetting started\n\n\n\n\n\n\n\n\n\n\nDirections to set up your website and create your first post.\n\n\n\n\n\n\nFeb 23, 2024\n\n\nDaniel Sussman\n\n\n\n\n\n\n  \n\n\n\n\nFirst Team Meeting\n\n\n\n\n\n\n\n\n\n\nThis post details the steps you’ll take for your first team meeting.\n\n\n\n\n\n\nFeb 21, 2024\n\n\nDaniel Sussman\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2024-02-28-blog-post-1/blog-post-1.html",
+    "href": "posts/2024-02-28-blog-post-1/blog-post-1.html",
+    "title": "Blog Post 1",
+    "section": "",
+    "text": "https://catalog.data.gov/dataset/mental-health-care-in-the-last-4-weeks\n\nData on the social and economic impacts of Covid-19 on American households\nThey looked at the pandemic’s effect on people’s employment status, consumer spending, food security, housing, education disruptions, and dimensions of physical and mental wellness.\nThe dataset was created in 2020, and was mostly recently updated in 2023\nIt was created by the Centers for Disease Control and Prevention (CDC)"
+  },
+  {
+    "objectID": "posts/2024-02-28-blog-post-1/blog-post-1.html#data-set-1-mental-health",
+    "href": "posts/2024-02-28-blog-post-1/blog-post-1.html#data-set-1-mental-health",
+    "title": "Blog Post 1",
+    "section": "",
+    "text": "https://catalog.data.gov/dataset/mental-health-care-in-the-last-4-weeks\n\nData on the social and economic impacts of Covid-19 on American households\nThey looked at the pandemic’s effect on people’s employment status, consumer spending, food security, housing, education disruptions, and dimensions of physical and mental wellness.\nThe dataset was created in 2020, and was mostly recently updated in 2023\nIt was created by the Centers for Disease Control and Prevention (CDC)"
+  },
+  {
+    "objectID": "posts/2024-02-28-blog-post-1/blog-post-1.html#data-set-2-mental-health",
+    "href": "posts/2024-02-28-blog-post-1/blog-post-1.html#data-set-2-mental-health",
+    "title": "Blog Post 1",
+    "section": "Data Set 2: Mental Health",
+    "text": "Data Set 2: Mental Health\nhttps://catalog.data.gov/dataset/indicators-of-anxiety-or-depression-based-on-reported-frequency-of-symptoms-during-last-7-\n\nIt is collected by the National Center for Health Statistics (NCHS) and the Census Bureau.\nThe questions are a modified version of the two-item Patient Health Questionnaire (PHQ-2) and the two-item Generalized Anxiety Disorder (GAD-2) scale on the Household Pulse Survey.\nIndicators of anxiety & depression based on reported frequency of symptoms.\nThis dataset includes information about age, gender, races, education level, disability status, and state."
+  },
+  {
+    "objectID": "posts/2024-02-28-blog-post-1/blog-post-1.html#data-set-3-salary-level",
+    "href": "posts/2024-02-28-blog-post-1/blog-post-1.html#data-set-3-salary-level",
+    "title": "Blog Post 1",
+    "section": "Data Set 3: Salary Level",
+    "text": "Data Set 3: Salary Level\nhttps://catalog.data.gov/dataset/current-population-survey-cps-weekly-and-hourly-earnings-8d283\n\nConducted by the Bureau of Census for the Bureau of Labor Statistics.\nEarnings data collected from one-fourth of the CPS total sample of approximately 60,000 households. Covers all 50 States.\n9 different tables looking at salaries based on race, gender, age, education, part time/full time, and occupation.\nWe can look to draw conclusions about average salary depending on these factors or two at the same time such as occupation and race.\nTables tend to average around 8 columns by 12 rows.\nA challenge might be to combine/load all tables into r studio Data appears very clean."
   }
 ]

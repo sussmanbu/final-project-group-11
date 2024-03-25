@@ -1,8 +1,53 @@
 ---
 title: "Blog Post 2"
-author: ""
+author: "Group 11"
 date: "2024-03-25"
 date-modified: "2024-03-25"
 draft: FALSE
 ---
 
+## Reasons why we are picking Data Set 1 over Data Set 2:
+
+Data Set 1 has more indicators, it has 5, which are … 
+
+- Took Prescription Medication for Mental Health, Last 4 Weeks
+
+- Received Counseling or Therapy, Last 4 Weeks
+
+- Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks
+
+- Needed Counseling or Therapy But Did Not Get It, Last 4 Weeks
+
+Data Set 2 meanwhile only has 3, which are … 
+
+- Symptoms of depressive disorder
+
+- Symptoms of anxiety disorder 
+
+- Symptoms of anxiety or depressive disorder 
+
+With Data Set 1 we can look at longitudinal data such as prescriptions/counseling etc. and how that changed during the pandemic, and as we transitioned into a post-COVID world. 
+
+We also plan to look at indicators relative to their region of the United States and also by their subgroup to look for correlated variables. Subgroups include age, education level, sex, and race
+
+## More information on Data Set 1:
+
+This data set is from a survey that tracks mental health over 4-week phases from August 2020 to May 2022.
+
+Survey respondents were asked to respond to the following questions:
+
+- At any time in the last 4 weeks, did you take prescription medication to help you with any emotions or with your concentration, behavior or mental health?
+
+- At any time in the last 4 weeks, did you receive counseling or therapy from a mental health professional such as a psychiatrist, psychologist, psychiatric nurse, or clinical social worker? Include counseling or therapy online or by phone.
+
+- At any time in the last 4 weeks, did you need counseling or therapy from a mental health professional, but did not get it for any reason?
+
+They also gave other demographic information listed above. 
+
+There were 10405 number of rows and 14 number of variables
+
+## More information on Data Set 2: 
+
+- Data Set 2 had a similar structure as Data Set 1, whereby it looked at the occurrence of symptoms associated with depressive disorders and anxiety disorders.
+
+- There are 14,923 rows and 13 variables

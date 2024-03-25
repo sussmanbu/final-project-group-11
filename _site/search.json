@@ -53,7 +53,7 @@
     "href": "index.html",
     "title": "MA [46]15 Final Project",
     "section": "",
-    "text": "Final Project due May 7, 2024 at 11:59pm.\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nBlog Post 2\n\n\n\n\n\n\n\n\n\n\n\n\nMar 25, 2024\n\n\n\n\n\n\n  \n\n\n\n\nBlog Post 1\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\n\n\n\n\n  \n\n\n\n\nExamples\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 26, 2024\n\n\nDaniel Sussman\n\n\n\n\n\n\n  \n\n\n\n\nGetting started\n\n\n\n\n\n\n\n\n\n\nDirections to set up your website and create your first post.\n\n\n\n\n\n\nFeb 23, 2024\n\n\nDaniel Sussman\n\n\n\n\n\n\n  \n\n\n\n\nFirst Team Meeting\n\n\n\n\n\n\n\n\n\n\nThis post details the steps you’ll take for your first team meeting.\n\n\n\n\n\n\nFeb 21, 2024\n\n\nDaniel Sussman\n\n\n\n\n\n\nNo matching items"
+    "text": "Final Project due May 7, 2024 at 11:59pm.\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nBlog Post 2\n\n\n\n\n\n\n\n\n\n\n\n\nMar 25, 2024\n\n\nGroup 11\n\n\n\n\n\n\n  \n\n\n\n\nBlog Post 1\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\n\n\n\n\n  \n\n\n\n\nExamples\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 26, 2024\n\n\nDaniel Sussman\n\n\n\n\n\n\n  \n\n\n\n\nGetting started\n\n\n\n\n\n\n\n\n\n\nDirections to set up your website and create your first post.\n\n\n\n\n\n\nFeb 23, 2024\n\n\nDaniel Sussman\n\n\n\n\n\n\n  \n\n\n\n\nFirst Team Meeting\n\n\n\n\n\n\n\n\n\n\nThis post details the steps you’ll take for your first team meeting.\n\n\n\n\n\n\nFeb 21, 2024\n\n\nDaniel Sussman\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2023-10-13-first-team-meeting/first-team-meeting.html",
@@ -166,5 +166,33 @@
     "title": "Big Picture",
     "section": "Rubric: Other components",
     "text": "Rubric: Other components\n\nInteractive\nYou will also be required to make an interactive dashboard like this one.\nYour Big Data page should include a link to an interactive dashboard. The dashboard should be created either using Shiny or FlexDashboard (or another tool with professor’s approval). This interactive component should in some way support your thesis from your big picture page. Good interactives often provide both high-level understanding of the data while allowing a user to investigate specific scenarios, observations, subgroups, etc.\n\nQuality and ease of use of the interactive components. Is it clear what can be explored using your interactive components? Does it enhance and reinforce your conclusions from the Big Picture? Plotly with default hover text will get no credit. Be creative!\n\n\n\nVideo Recording\nMake a video recording (probably using Zoom) demonstrating your interactive components. You should provide a quick explanation of your data and demonstrate some of the conclusions from your EDA. This video should be no longer than 4 minutes. Include a link to your video (and password if needed) in your README.md file on your Github repository. You are not required to provide a link on the website. This can be presented by any subset of the team members.\n\n\nRest of the Site\nFinally, here are important things to keep in mind for the rest of the site.\nThe main title of your page is informative. Each post has an author/description/informative title. All lab required posts are present. Each page (including the home page) has a nice featured image associated with it. Your about page is up to date and clean. You have removed the generic posts from the initial site template."
+  },
+  {
+    "objectID": "posts/2024-03-25-blog-post-2/blog-post-2.html",
+    "href": "posts/2024-03-25-blog-post-2/blog-post-2.html",
+    "title": "Blog Post 2",
+    "section": "",
+    "text": "Data Set 1 has more indicators, it has 5, which are …\n\nTook Prescription Medication for Mental Health, Last 4 Weeks\nReceived Counseling or Therapy, Last 4 Weeks\nTook Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks\nNeeded Counseling or Therapy But Did Not Get It, Last 4 Weeks\n\nData Set 2 meanwhile only has 3, which are …\n\nSymptoms of depressive disorder\nSymptoms of anxiety disorder\nSymptoms of anxiety or depressive disorder\n\nWith Data Set 1 we can look at longitudinal data such as prescriptions/counseling etc. and how that changed during the pandemic, and as we transitioned into a post-COVID world.\nWe also plan to look at indicators relative to their region of the United States and also by their subgroup to look for correlated variables. Subgroups include age, education level, sex, and race"
+  },
+  {
+    "objectID": "posts/2024-03-25-blog-post-2/blog-post-2.html#reasons-why-we-are-picking-data-set-1-over-data-set-2",
+    "href": "posts/2024-03-25-blog-post-2/blog-post-2.html#reasons-why-we-are-picking-data-set-1-over-data-set-2",
+    "title": "Blog Post 2",
+    "section": "",
+    "text": "Data Set 1 has more indicators, it has 5, which are …\n\nTook Prescription Medication for Mental Health, Last 4 Weeks\nReceived Counseling or Therapy, Last 4 Weeks\nTook Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks\nNeeded Counseling or Therapy But Did Not Get It, Last 4 Weeks\n\nData Set 2 meanwhile only has 3, which are …\n\nSymptoms of depressive disorder\nSymptoms of anxiety disorder\nSymptoms of anxiety or depressive disorder\n\nWith Data Set 1 we can look at longitudinal data such as prescriptions/counseling etc. and how that changed during the pandemic, and as we transitioned into a post-COVID world.\nWe also plan to look at indicators relative to their region of the United States and also by their subgroup to look for correlated variables. Subgroups include age, education level, sex, and race"
+  },
+  {
+    "objectID": "posts/2024-03-25-blog-post-2/blog-post-2.html#more-information-on-data-set-1",
+    "href": "posts/2024-03-25-blog-post-2/blog-post-2.html#more-information-on-data-set-1",
+    "title": "Blog Post 2",
+    "section": "More information on Data Set 1:",
+    "text": "More information on Data Set 1:\nThis data set is from a survey that tracks mental health over 4-week phases from August 2020 to May 2022.\nSurvey respondents were asked to respond to the following questions:\n\nAt any time in the last 4 weeks, did you take prescription medication to help you with any emotions or with your concentration, behavior or mental health?\nAt any time in the last 4 weeks, did you receive counseling or therapy from a mental health professional such as a psychiatrist, psychologist, psychiatric nurse, or clinical social worker? Include counseling or therapy online or by phone.\nAt any time in the last 4 weeks, did you need counseling or therapy from a mental health professional, but did not get it for any reason?\n\nThey also gave other demographic information listed above.\nThere were 10405 number of rows and 14 number of variables"
+  },
+  {
+    "objectID": "posts/2024-03-25-blog-post-2/blog-post-2.html#more-information-on-data-set-2",
+    "href": "posts/2024-03-25-blog-post-2/blog-post-2.html#more-information-on-data-set-2",
+    "title": "Blog Post 2",
+    "section": "More information on Data Set 2:",
+    "text": "More information on Data Set 2:\n\nData Set 2 had a similar structure as Data Set 1, whereby it looked at the occurrence of symptoms associated with depressive disorders and anxiety disorders.\nThere are 14,923 rows and 13 variables"
   }
 ]

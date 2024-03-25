@@ -172,7 +172,14 @@
     "href": "about.html#yan-wang",
     "title": "About",
     "section": "Yan Wang",
-    "text": "Yan Wang\nYan Wang is a undergraduate student in Statistics.\n\n\nAbout this Template.\nThis is based off of the standard Quarto website template from RStudio (2023.09.0 Build 463)."
+    "text": "Yan Wang\nYan Wang is a undergraduate student in Statistics."
+  },
+  {
+    "objectID": "about.html#jack-mccormick",
+    "href": "about.html#jack-mccormick",
+    "title": "About",
+    "section": "Jack McCormick",
+    "text": "Jack McCormick\nJack is a third year data science student.\n\n\nAbout this Template.\nThis is based off of the standard Quarto website template from RStudio (2023.09.0 Build 463)."
   },
   {
     "objectID": "big_picture.html",

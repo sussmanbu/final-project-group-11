@@ -37,6 +37,10 @@ Sizhe is a senior undergraduate student, majoring in Psychology.
 ## Yan Wang
 Yan Wang is a undergraduate student in Statistics.
 
+## Jack McCormick
+
+Jack is a third year data science student.
+
 <!-- Please leave in the information below -->
 
 ### About this Template.

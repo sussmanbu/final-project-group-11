@@ -175,6 +175,13 @@
     "text": "Yan Wang\nYan Wang is a undergraduate student in Statistics."
   },
   {
+    "objectID": "about.html#jack-mccormick",
+    "href": "about.html#jack-mccormick",
+    "title": "About",
+    "section": "Jack McCormick",
+    "text": "Jack McCormick\nJack is a third year data science student.\n\n\nAbout this Template.\nThis is based off of the standard Quarto website template from RStudio (2023.09.0 Build 463)."
+  },
+  {
     "objectID": "big_picture.html",
     "href": "big_picture.html",
     "title": "Big Picture",
@@ -194,12 +201,5 @@
     "title": "Big Picture",
     "section": "Rubric: Other components",
     "text": "Rubric: Other components\n\nInteractive\nYou will also be required to make an interactive dashboard like this one.\nYour Big Data page should include a link to an interactive dashboard. The dashboard should be created either using Shiny or FlexDashboard (or another tool with professor’s approval). This interactive component should in some way support your thesis from your big picture page. Good interactives often provide both high-level understanding of the data while allowing a user to investigate specific scenarios, observations, subgroups, etc.\n\nQuality and ease of use of the interactive components. Is it clear what can be explored using your interactive components? Does it enhance and reinforce your conclusions from the Big Picture? Plotly with default hover text will get no credit. Be creative!\n\n\n\nVideo Recording\nMake a video recording (probably using Zoom) demonstrating your interactive components. You should provide a quick explanation of your data and demonstrate some of the conclusions from your EDA. This video should be no longer than 4 minutes. Include a link to your video (and password if needed) in your README.md file on your Github repository. You are not required to provide a link on the website. This can be presented by any subset of the team members.\n\n\nRest of the Site\nFinally, here are important things to keep in mind for the rest of the site.\nThe main title of your page is informative. Each post has an author/description/informative title. All lab required posts are present. Each page (including the home page) has a nice featured image associated with it. Your about page is up to date and clean. You have removed the generic posts from the initial site template."
-  },
-  {
-    "objectID": "about.html#jack-mccormick",
-    "href": "about.html#jack-mccormick",
-    "title": "About",
-    "section": "Jack McCormick",
-    "text": "Jack McCormick\nJack is a third year data science student.\n\n\nAbout this Template.\nThis is based off of the standard Quarto website template from RStudio (2023.09.0 Build 463)."
   }
 ]

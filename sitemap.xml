@@ -1,43 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sussmanbu.github.io/final-project-group-11/data.html</loc>
-    <lastmod>2024-03-25T19:16:59.857Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/final-project-group-11/analysis.html</loc>
-    <lastmod>2024-03-25T19:16:58.376Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/final-project-group-11/index.html</loc>
-    <lastmod>2024-03-25T19:16:56.692Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/final-project-group-11/posts/2024-03-25-blog-post-2/blog-post-2.html</loc>
-    <lastmod>2024-03-25T19:16:55.810Z</lastmod>
+    <loc>https://sussmanbu.github.io/final-project-group-11/posts/2023-10-15-getting-started/getting-started.html</loc>
+    <lastmod>2024-04-01T19:09:19.641Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/final-project-group-11/posts/2023-10-13-first-team-meeting/first-team-meeting.html</loc>
-    <lastmod>2024-03-25T19:16:55.289Z</lastmod>
+    <lastmod>2024-04-01T19:09:19.965Z</lastmod>
   </url>
   <url>
-    <loc>https://sussmanbu.github.io/final-project-group-11/posts/2023-10-15-getting-started/getting-started.html</loc>
-    <lastmod>2024-03-25T19:16:54.981Z</lastmod>
+    <loc>https://sussmanbu.github.io/final-project-group-11/posts/2024-04-01-blog-post-3/blog-post-3.html</loc>
+    <lastmod>2024-04-01T19:09:20.245Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/final-project-group-11/posts/2024-02-28-blog-post-1/blog-post-1.html</loc>
-    <lastmod>2024-03-25T19:16:55.546Z</lastmod>
+    <lastmod>2024-04-01T19:09:20.563Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/final-project-group-11/posts/2024-03-25-blog-post-2/blog-post-2.html</loc>
+    <lastmod>2024-04-01T19:09:20.887Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/final-project-group-11/posts/2023-12-20-examples/examples.html</loc>
-    <lastmod>2024-03-25T19:16:56.260Z</lastmod>
+    <lastmod>2024-04-01T19:09:21.407Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/final-project-group-11/index.html</loc>
+    <lastmod>2024-04-01T19:09:21.777Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/final-project-group-11/about.html</loc>
-    <lastmod>2024-03-25T19:16:56.947Z</lastmod>
+    <lastmod>2024-04-01T19:09:22.081Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/final-project-group-11/analysis.html</loc>
+    <lastmod>2024-04-01T19:09:23.771Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/final-project-group-11/big_picture.html</loc>
-    <lastmod>2024-03-25T19:16:58.663Z</lastmod>
+    <lastmod>2024-04-01T19:09:24.066Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/final-project-group-11/data.html</loc>
+    <lastmod>2024-04-01T19:09:25.358Z</lastmod>
   </url>
 </urlset>

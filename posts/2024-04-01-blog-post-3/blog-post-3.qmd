@@ -1,0 +1,14 @@
+---
+title: "Blog Post 3"
+author: ""
+date: "2024-04-01"
+date-modified: "2024-04-01"
+draft: FALSE
+---
+
+For Blog Post #3 we have started to clean up the data. We read the original file 'Mental_Health_Care_in_the_Last_4_Weeks.csv', which you can see in the dataset folder. We then started to clean the data up and we have put the code in the R file in the dataset folder as well. In order to clean the data up, we essentially got rid of the last 3 columns, and we got rid of any non-value cells. The columns we got rid of were 'Confidence Interval', 'Quartile Range' and 'Suppression Flag'. We got rid of 'Confidence Interval' because you can calculate that using the previous two columns: LowCI and HighCI. We got rid of 'Quartile Range' because there were empty cells, i.e., not available for all of our data points. And the 'Suppression Flag' column was entirely empty. We then converted the file into a RDS file called, cleaned_dataset, which should be in the dataset folder. There is a R markdown file with our cleaned up data titled 'load_and_clean.R' 
+
+
+After looking at the data again, we realized that the 'Suppression Flag' column indicated any missing data points. So we will be going back and deleting empty participants. We will be able to do this by simply looking at participants or data points that have more than one missing column. We can use the complete function to do this. We shall have it done soon. 
+
+

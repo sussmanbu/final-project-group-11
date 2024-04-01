@@ -1,0 +1,14 @@
+{
+  "hash": "ddea4f07bc9e0a69ee11d130846bdefd",
+  "result": {
+    "markdown": "---\ntitle: \"Blog Post 3\"\nauthor: \"\"\ndate: \"2024-04-01\"\ndate-modified: \"2024-04-01\"\ndraft: FALSE\n---\n\n\nFor Blog Post #3 we have started to clean up the data. And we have put the code below. \n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(readr)\nlibrary(dplyr)\n```\n\n::: {.cell-output .cell-output-stderr}\n```\n\nAttaching package: 'dplyr'\n```\n:::\n\n::: {.cell-output .cell-output-stderr}\n```\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n```\n:::\n\n::: {.cell-output .cell-output-stderr}\n```\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n```\n:::\n\n```{.r .cell-code}\ndata <- read_csv(\"dataset/Mental_Health_Care_in_the_Last_4_Weeks.csv\",show_col_types = FALSE)\ndata_cleaned <- data%>%\n  select(-ncol(.), -(ncol(.)-1), -(ncol(.)-2))%>%\n  na.omit(data)\n  \ndata_cleaned\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n# A tibble: 9,914 × 12\n   Indicator        Group State Subgroup Phase `Time Period` `Time Period Label`\n   <chr>            <chr> <chr> <chr>    <chr>         <dbl> <chr>              \n 1 Took Prescripti… Nati… Unit… United … 2                13 Aug 19 - Aug 31, 2…\n 2 Took Prescripti… By A… Unit… 18 - 29… 2                13 Aug 19 - Aug 31, 2…\n 3 Took Prescripti… By A… Unit… 30 - 39… 2                13 Aug 19 - Aug 31, 2…\n 4 Took Prescripti… By A… Unit… 40 - 49… 2                13 Aug 19 - Aug 31, 2…\n 5 Took Prescripti… By A… Unit… 50 - 59… 2                13 Aug 19 - Aug 31, 2…\n 6 Took Prescripti… By A… Unit… 60 - 69… 2                13 Aug 19 - Aug 31, 2…\n 7 Took Prescripti… By A… Unit… 70 - 79… 2                13 Aug 19 - Aug 31, 2…\n 8 Took Prescripti… By A… Unit… 80 year… 2                13 Aug 19 - Aug 31, 2…\n 9 Took Prescripti… By S… Unit… Male     2                13 Aug 19 - Aug 31, 2…\n10 Took Prescripti… By S… Unit… Female   2                13 Aug 19 - Aug 31, 2…\n# ℹ 9,904 more rows\n# ℹ 5 more variables: `Time Period Start Date` <chr>,\n#   `Time Period End Date` <chr>, Value <dbl>, LowCI <dbl>, HighCI <dbl>\n```\n:::\n:::\n\n\nWe are thinking of looking at trends that relate to ",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

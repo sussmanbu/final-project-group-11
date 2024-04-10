@@ -1,0 +1,124 @@
+---
+title: "Blog Post 4"
+author: ""
+date: "2024-04-10"
+date-modified: "2024-04-10"
+draft: FALSE
+---
+
+For Blog Post 4, we adjust the data further to seperate the dataset according to different indicators.
+
+
+Then, we use Age as the predictor (a categorical variable) and Indicator Value as the response variable to run a regression. As the result we find different coefficient for different age groups.
+
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(lmtest)
+library(car)
+
+mydata <- read.csv("~/Downloads/MA 415/final-project-group-11/posts/2024-04-10-blog-post-4/Mental_Health_Care_in_the_Last_4_Weeks_.csv")
+
+filtered_data <- mydata %>% 
+  filter(Group == 'By Age')
+
+data_indicator1 <- filtered_data %>% filter(Indicator == "Took Prescription Medication for Mental Health, Last 4 Weeks")
+data_indicator2 <- filtered_data %>% filter(Indicator == "Received Counseling or Therapy, Last 4 Weeks")
+data_indicator3 <- filtered_data %>% filter(Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks")
+data_indicator4 <- filtered_data %>% filter(Indicator == "Needed Counseling or Therapy But Did Not Get It, Last 4 Weeks")
+
+```
+
+```{r}
+data_indicator1$Subgroup <- factor(data_indicator1$Subgroup, levels = c("80 years and above", 
+                                                   "18 - 29 years", 
+                                                   "30 - 39 years", 
+                                                   "40 - 49 years", 
+                                                   "50 - 59 years", 
+                                                   "60 - 69 years", 
+                                                   "70 - 79 years"))
+
+data_indicator1 <- data_indicator1 %>%
+  mutate(across(.cols = Subgroup, 
+                .fns = ~ model.matrix(~ . - 1, data = data.frame(.))))
+
+data_indicator2$Subgroup <- factor(data_indicator2$Subgroup, levels = c("80 years and above", 
+                                                   "18 - 29 years", 
+                                                   "30 - 39 years", 
+                                                   "40 - 49 years", 
+                                                   "50 - 59 years", 
+                                                   "60 - 69 years", 
+                                                   "70 - 79 years"))
+
+data_indicator2 <- data_indicator2 %>%
+  mutate(across(.cols = Subgroup, 
+                .fns = ~ model.matrix(~ . - 1, data = data.frame(.))))
+
+data_indicator3$Subgroup <- factor(data_indicator3$Subgroup, levels = c("80 years and above", 
+                                                   "18 - 29 years", 
+                                                   "30 - 39 years", 
+                                                   "40 - 49 years", 
+                                                   "50 - 59 years", 
+                                                   "60 - 69 years", 
+                                                   "70 - 79 years"))
+
+data_indicator3 <- data_indicator3 %>%
+  mutate(across(.cols = Subgroup, 
+                .fns = ~ model.matrix(~ . - 1, data = data.frame(.))))
+
+data_indicator4$Subgroup <- factor(data_indicator4$Subgroup, levels = c("80 years and above", 
+                                                   "18 - 29 years", 
+                                                   "30 - 39 years", 
+                                                   "40 - 49 years", 
+                                                   "50 - 59 years", 
+                                                   "60 - 69 years", 
+                                                   "70 - 79 years"))
+
+data_indicator4 <- data_indicator4 %>%
+  mutate(across(.cols = Subgroup, 
+                .fns = ~ model.matrix(~ . - 1, data = data.frame(.))))
+
+```
+
+## Indicator 1
+
+```{r}
+Y <- data_indicator1$Value
+X1 <- data_indicator1$Subgroup
+
+model <- lm(Y~X1, data = data_indicator1)
+model
+```
+
+## Indicator 2
+
+```{r}
+Y2 <- data_indicator2$Value
+X2 <- data_indicator2$Subgroup
+
+model <- lm(Y2~X2, data = data_indicator2)
+model
+```
+
+## Indicator 3
+
+```{r}
+Y3 <- data_indicator3$Value
+X3 <- data_indicator3$Subgroup
+
+model <- lm(Y3~X3, data = data_indicator3)
+model
+```
+
+## Indicator 4
+
+```{r}
+Y4 <- data_indicator4$Value
+X4 <- data_indicator4$Subgroup
+
+model <- lm(Y4~X4, data = data_indicator4)
+model
+```
+
+

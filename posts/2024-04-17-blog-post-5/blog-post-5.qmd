@@ -6,3 +6,14 @@ date-modified: "2024-04-17"
 draft: FALSE
 ---
 
+## BLOG POST 5
+
+For this blog post, we found a second and third data set, which we have added to the Data Set folder. We will be looking at employment across the states in USA during the period that the mental health data was collected (2020). We hope to find some sort of correlation between lower employment rates and greater mental health problems, across states. We also think as employment rates improve, mental health scores would improve too. So, for the final project we may consider looking at employment data from post-covid, i.e., 2021 or 2022. If we are able to combine more than one dataset into one dataset. 
+
+We will also look at the GDP (gross domestic product), as an indicator for income. We will then do multiple regressions (or ANOVAs) to see how these variables (mental health, employment, income), interact with each other. We have also added the GDP data to the Data Set folder. Again, for the final project, we will try to do the same for GDP where we look at the variable across time, and therefore pull 2021 and/or 2022 data. 
+
+We may also try to combine the unemployment and GDP datasets into one, so it is one dataset, as they are both split by State. 
+
+
+
+

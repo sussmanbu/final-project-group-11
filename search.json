@@ -91,6 +91,20 @@
     "text": "Indicator 4\n\nY4 &lt;- data_indicator4$Value\nX4 &lt;- data_indicator4$Subgroup\n\nmodel &lt;- lm(Y4~X4, data = data_indicator4)\nmodel\n\n\nCall:\nlm(formula = Y4 ~ X4, data = data_indicator4)\n\nCoefficients:\n                 (Intercept)  X4Subgroup80 years and above  \n                      3.2636                        0.1402  \n     X4Subgroup18 - 29 years       X4Subgroup30 - 39 years  \n                     16.5848                       12.3030  \n     X4Subgroup40 - 49 years       X4Subgroup50 - 59 years  \n                      8.5818                        5.8848  \n     X4Subgroup60 - 69 years       X4Subgroup70 - 79 years  \n                      2.5121                            NA"
   },
   {
+    "objectID": "posts/2024-04-17-blog-post-5/blog-post-5.html",
+    "href": "posts/2024-04-17-blog-post-5/blog-post-5.html",
+    "title": "Blog Post 5",
+    "section": "",
+    "text": "For this blog post, we found a second and third data set, which we have added to the Data Set folder. We will be looking at employment across the states in USA during the period that the mental health data was collected (2020). We hope to find some sort of correlation between lower employment rates and greater mental health problems, across states. We also think as employment rates improve, mental health scores would improve too. So, for the final project we may consider looking at employment data from post-covid, i.e., 2021 or 2022. If we are able to combine more than one dataset into one dataset.\nWe will also look at the GDP (gross domestic product), as an indicator for income. We will then do multiple regressions (or ANOVAs) to see how these variables (mental health, employment, income), interact with each other. We have also added the GDP data to the Data Set folder. Again, for the final project, we will try to do the same for GDP where we look at the variable across time, and therefore pull 2021 and/or 2022 data.\nWe may also try to combine the unemployment and GDP datasets into one, so it is one dataset, as they are both split by State."
+  },
+  {
+    "objectID": "posts/2024-04-17-blog-post-5/blog-post-5.html#blog-post-5",
+    "href": "posts/2024-04-17-blog-post-5/blog-post-5.html#blog-post-5",
+    "title": "Blog Post 5",
+    "section": "",
+    "text": "For this blog post, we found a second and third data set, which we have added to the Data Set folder. We will be looking at employment across the states in USA during the period that the mental health data was collected (2020). We hope to find some sort of correlation between lower employment rates and greater mental health problems, across states. We also think as employment rates improve, mental health scores would improve too. So, for the final project we may consider looking at employment data from post-covid, i.e., 2021 or 2022. If we are able to combine more than one dataset into one dataset.\nWe will also look at the GDP (gross domestic product), as an indicator for income. We will then do multiple regressions (or ANOVAs) to see how these variables (mental health, employment, income), interact with each other. We have also added the GDP data to the Data Set folder. Again, for the final project, we will try to do the same for GDP where we look at the variable across time, and therefore pull 2021 and/or 2022 data.\nWe may also try to combine the unemployment and GDP datasets into one, so it is one dataset, as they are both split by State."
+  },
+  {
     "objectID": "posts/2024-04-01-blog-post-3/blog-post-3.html",
     "href": "posts/2024-04-01-blog-post-3/blog-post-3.html",
     "title": "Blog Post 3",

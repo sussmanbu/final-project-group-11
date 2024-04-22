@@ -6,5 +6,33 @@ date-modified: "2024-04-19"
 draft: FALSE
 ---
 
-Hypotheses: 
-We set out to investigate 
+We cleaned and integrated data on unemployment rates and search for mental health assistance to help us better analyze the correlation.
+
+Thesis: Increased unemployment increases the frequency with which people seek psychological assistance.
+
+After our analysis, the correlation coefficient is -0.3016 with p-value: 0.0154.
+
+
+## Merging Data
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(lmtest)
+library(car)
+
+data1 <- read.csv("~/Downloads/MA 415/final-project-group-11/posts/2024-04-19-blog-post-6/cleaned_mental_health_data.csv")
+data2 <- read.csv("~/Downloads/MA 415/final-project-group-11/posts/2024-04-19-blog-post-6/cleaned_employment_data_2023.csv")
+
+combined_data <- inner_join(data1, data2, by = "State")
+
+combined_data$Value <- as.numeric(combined_data$Value)
+combined_data$Unemployment_Rate2023 <- as.numeric(combined_data$Unemployment.Rate.2023)
+
+Y <- combined_data$Value
+X <- combined_data$Unemployment_Rate2023
+
+model <- lm(Y~X, data=combined_data)
+summary(model)
+```
+

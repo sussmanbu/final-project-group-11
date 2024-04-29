@@ -18,11 +18,11 @@ After our analysis, the correlation coefficient is -0.3016 with p-value: 0.0154.
 ```{r}
 library(dplyr)
 library(ggplot2)
-library(lmtest)
-library(car)
+#library(lmtest)
+#library(car)
 
-data1 <- read.csv("~/Downloads/MA 415/final-project-group-11/posts/2024-04-19-blog-post-6/cleaned_mental_health_data.csv")
-data2 <- read.csv("~/Downloads/MA 415/final-project-group-11/posts/2024-04-19-blog-post-6/cleaned_employment_data_2023.csv")
+data1 <- read.csv("~/Users/chenqiw/final-project-group-11/posts/2024-04-19-blog-post-6/cleaned_mental_health_data.csv")
+data2 <- read.csv("~/Users/chenqiw/final-project-group-11/posts/2024-04-19-blog-post-6/cleaned_employment_data_2023.csv")
 
 combined_data <- inner_join(data1, data2, by = "State")
 

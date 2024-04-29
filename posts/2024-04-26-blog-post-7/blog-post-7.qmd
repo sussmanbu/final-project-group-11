@@ -5,4 +5,12 @@ date: "2024-04-26"
 date-modified: "2024-04-26"
 draft: FALSE
 ---
+we run the model for indicator and found we 
 
+```{r}
+main_data <- readRDS("~/final-project-group-11/dataset/cleaned_dataset.rds")
+Y <- main_data$Value
+X <- main_data$Indicator
+model <- lm(Y~X, data=main_data)
+summary(model)
+```

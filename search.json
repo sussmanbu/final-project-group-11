@@ -200,7 +200,35 @@
     "href": "analysis.html#rubric-on-this-page",
     "title": "Analysis",
     "section": "Rubric: On this page",
-    "text": "Rubric: On this page\nYou will\n\nIntroduce what motivates your Data Analysis (DA)\n\nWhich variables and relationships are you most interested in?\nWhat questions are you interested in answering?\nProvide context for the rest of the page. This will include figures/tables that illustrate aspects of the data of your question.\n\nModeling and Inference\n\nThe page will include some kind of formal statistical model. This could be a linear regression, logistic regression, or another modeling framework.\nExplain the ideas and techniques you used to choose the predictors for your model. (Think about including interaction terms and other transformations of your variables.)\nDescribe the results of your modelling and make sure to give a sense of the uncertainty in your estimates and conclusions.\n\nExplain the flaws and limitations of your analysis\n\nAre there some assumptions that you needed to make that might not hold? Is there other data that would help to answer your questions?\n\nClarity Figures\n\nAre your figures/tables/results easy to read, informative, without problems like overplotting, hard-to-read labels, etc?\nEach figure should provide a key insight. Too many figures or other data summaries can detract from this. (While not a hard limit, around 5 total figures is probably a good target.)\nDefault lm output and plots are typically not acceptable.\n\nClarity of Explanations\n\nHow well do you explain each figure/result?\nDo you provide interpretations that suggest further analysis or explanations for observed phenomenon?\n\nOrganization and cleanliness.\n\nMake sure to remove excessive warnings, hide most or all code, organize with sections or multiple pages, use bullets, etc.\nThis page should be self-contained, i.e. provide a description of the relevant data."
+    "text": "Rubric: On this page\nYou will\n\nIntroduce what motivates your Data Analysis (DA)\n\nWhich variables and relationships are you most interested in?\nWhat questions are you interested in answering?\nProvide context for the rest of the page. This will include figures/tables that illustrate aspects of the data of your question.\n\nModeling and Inference\n\nThe page will include some kind of formal statistical model. This could be a linear regression, logistic regression, or another modeling framework.\nExplain the ideas and techniques you used to choose the predictors for your model. (Think about including interaction terms and other transformations of your variables.)\nDescribe the results of your modelling and make sure to give a sense of the uncertainty in your estimates and conclusions.\n\nExplain the flaws and limitations of your analysis\n\nAre there some assumptions that you needed to make that might not hold? Is there other data that would help to answer your questions?\n\nClarity Figures\n\nAre your figures/tables/results easy to read, informative, without problems like overplotting, hard-to-read labels, etc?\nEach figure should provide a key insight. Too many figures or other data summaries can detract from this. (While not a hard limit, around 5 total figures is probably a good target.)\nDefault lm output and plots are typically not acceptable.\n\nClarity of Explanations\n\nHow well do you explain each figure/result?\nDo you provide interpretations that suggest further analysis or explanations for observed phenomenon?\n\nOrganization and cleanliness.\n\nMake sure to remove excessive warnings, hide most or all code, organize with sections or multiple pages, use bullets, etc.\nThis page should be self-contained, i.e. provide a description of the relevant data.\n\n\n———————————-keep———————————————- # motivates:"
+  },
+  {
+    "objectID": "analysis.html#introduction-to-data-analysis-on-the-impact-of-unemployment-on-mental-health-during-the-pandemic",
+    "href": "analysis.html#introduction-to-data-analysis-on-the-impact-of-unemployment-on-mental-health-during-the-pandemic",
+    "title": "Analysis",
+    "section": "Introduction to Data Analysis on the Impact of Unemployment on Mental Health during the Pandemic",
+    "text": "Introduction to Data Analysis on the Impact of Unemployment on Mental Health during the Pandemic\nThe COVID-19 pandemic has had a profound impact on global health and economic stability, touching all aspects of life, including mental well-being. Given the widespread changes and challenges, there has been a renewed focus on mental health, particularly as it relates to economic stresses like unemployment. This analysis aims to explore the complex relationship between unemployment and mental health during these challenging times."
+  },
+  {
+    "objectID": "analysis.html#variables-and-relationships-of-interest",
+    "href": "analysis.html#variables-and-relationships-of-interest",
+    "title": "Analysis",
+    "section": "Variables and Relationships of Interest",
+    "text": "Variables and Relationships of Interest\nThe primary variables of interest in this analysis are:\nUnemployment Rate: Measured monthly or annually, it reflects the percentage of the labor force that is jobless and actively seeking employment. Mental Health Metrics: This could include data on the prevalence of mental health conditions, rates of mental health service utilization, and frequencies of mental health-related symptoms reported by different demographics. Demographic Information: Including age and gender, which may influence how unemployment impacts mental health. The key relationship we are most interested in examining is the correlation between rising unemployment rates and changes in mental health status among different demographic groups."
+  },
+  {
+    "objectID": "analysis.html#research-questions",
+    "href": "analysis.html#research-questions",
+    "title": "Analysis",
+    "section": "Research Questions",
+    "text": "Research Questions\nThis analysis seeks to answer the following questions:\nHow has the unemployment rate influenced mental health conditions during the pandemic years? Are there significant differences in mental health across different age groups and genders? Has there been an increase in the use of mental health services correlating with changes in the unemployment rate?"
+  },
+  {
+    "objectID": "analysis.html#sex-and-gender",
+    "href": "analysis.html#sex-and-gender",
+    "title": "Analysis",
+    "section": "sex and gender",
+    "text": "sex and gender"
   },
   {
     "objectID": "big_picture.html",

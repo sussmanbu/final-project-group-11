@@ -27,7 +27,6 @@ Data from the census, weather data, economic data, are all relatively easy to co
 * Multiple sources for data that you can combine.
 * Some type of time and/or location component.
 
-
 ## Where to keep data?
 
 
@@ -72,9 +71,11 @@ You will
 
 * Describe where/how to find data.
   * You must include a link to the original data source(s). Make sure to provide attribution to those who collected the data.
+
   * Why was the data collected/curated? Who put it together? (This is important, if you don't know why it was collected then that might not be a good dataset to look at.
 * Describe the different data files used and what each variable means. 
   * If you have many variables then only describe the most relevant ones and summarize the rest.
+
 * Describe any cleaning you had to do for your data.
   * You *must* include a link to your `load_and_clean_data.R` file.
   * Rrename variables and recode factors to make data more clear.
@@ -84,3 +85,421 @@ You will
 * Organization, clarity, cleanliness of the page
   * Make sure to remove excessive warnings, use clean easy-to-read code (without side scrolling), organize with sections, use bullets and other organization tools, etc.
   * This page should be self-contained.
+  
+-------------------------keep_below--------------------------------------------
+
+# Describe where/how to find data:
+
+### Mental Health:
+
+### Unemployment Rate：
+
+
+# Datasets 
+## Cleaning:
+
+you can [access our Load and Clean Script here](./dataset/load_and_clean.R)
+for the mental health data, we essentially got rid of the last 3 columns, and we got rid of any non-value cells. The columns we got rid of were ‘Confidence Interval’, ‘Quartile Range’ and ‘Suppression Flag’. We got rid of ‘Confidence Interval’ because you can calculate that using the previous two columns: LowCI and HighCI. We got rid of ‘Quartile Range’ because there were empty cells, i.e., not available for all of our data points.
+For the unemployment rate data, we keep only the rate for 2020,2021, and 2022, which is our mental health data cover, and calculate the average of them, then connect it with the average of values for different states, under indicator: Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks.
+
+## Extra R package:
+
+we are using the R package ["gridExtra"](https://cran.r-project.org/web/packages/gridExtra/index.html) to help us arrange the graph in the data page.
+["knitr"](https://cran.r-project.org/web/packages/knitr/index.html) to help generate table
+
+## Mental Health:
+
+| Variable  | Description                                        |
+|-----------|----------------------------------------------------|
+|indicator  |The indicator of the treatment the subject received. There were four: 1. Took prescription medication for mental health. 2. Received counseling or therapy. 3. Took prescription medication and/or received counseling or therapy. 4. Needed counseling or therapy but did not get it                                                |
+|Group:   |the grouping method                                             |
+|State:  |name of state, United State if all state are include                                             |
+|Subgroup  |Each data point was also subgrouped by other demographic factors such as age, sex, race, education, state                                             |
+|value  |people who received treatment or not, indicate mental health, higher is worse                                            |
+
+
+for subgroups:
+
+| subgroup  | Description                                        |
+|-----------|----------------------------------------------------|
+|sex|Male or Female|
+|age|The age ranged from 18-79 years old and were group in 10’s|
+|race|There were five race categories. 1. Hispanic or Latino. 2. Non-Hispanic White. 3. Non-Hispanic Black. 4. Non-Hispanic Asian. 5. Non-Hispanic Other or Multiple races|
+|education|There were four race categories. 1. Less than a high-school diploma. 2. High school diploma or GED. 3. Some college/Associate’s degree. 4. Bachelor degree’s or higher|
+
+here is the cleaned dataset of our [ mental health data](./dataset/cleaned_dataset.rds)
+
+
+## Unemployment rate:
+
+we have include two kinds of unemployment rate, one is per month, the other one is per year by states.
+
+| Variable  | Description                                        |
+|-----------|----------------------------------------------------|
+|state|name of state|
+|X2020|unemployment rate for 2020 in percentage|
+|X2021|unemployment rate for 2021 in percentage|
+|X2022|unemployment rate for 2022 in percentage|
+|average|average of unemployment across these year|
+
+[here access to our cleaned unemployment rate data](./dataset/clean_unemployment.rds)
+
+we also include another unemployment data
+
+| Variable  | Description                                        |
+|-----------|----------------------------------------------------|
+|date|date the data is collected|
+|UNRATE|unemployment rate in percentage|
+
+[here access to our cleaned unemployment rate data with time](./dataset/UNRATE.csv)
+
+# Summeralize of the data:
+
+
+
+```{r, echo=FALSE}
+library(ggplot2)
+library(readr)
+library(dplyr)
+
+# Read the data
+data <- readRDS("~/final-project-group-11/dataset/cleaned_dataset.rds")
+
+# Filter data for national estimates and focus only on relevant columns
+national_data <- data %>%
+  filter(Group == "National Estimate") %>%
+  select(Indicator,`Time Period`, `Time Period Label`, Value)
+
+# Generate a line plot
+p_us_t<-ggplot(national_data, aes(x = `Time Period`, y = Value, color = Indicator)) +
+  geom_line() +
+  theme(legend.position = "bottom",
+         legend.direction = "vertical")+
+  labs(title = "Trends of Indicators Over Time",
+       x = "Time Period",
+       y = "Average Value",
+       color = "Indicator") 
+
+
+
+data_state <- data %>%
+  filter(Group == "By State", 
+         Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") 
+
+data_state_avg <-data_state%>%
+  group_by(Subgroup) %>%
+  summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
+  ungroup()
+
+
+
+data_race <- data %>%
+  filter(Group == "By Race/Hispanic ethnicity", 
+         Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") 
+
+#gen along time line plot
+p_race_t<-ggplot(data_race, aes(x = `Time Period`, y = Value, color = Subgroup)) +
+  geom_line() +
+  theme(legend.position = "bottom",
+         legend.direction = "vertical")+
+  labs(title = "Trends of Race Over Time",
+       x = "Time Period",
+       y = "Average Value",
+       color = "Race") 
+
+data_race_avg <-data_race%>%
+  group_by(Subgroup) %>%
+  summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
+  ungroup()
+
+# Generate an averaged bar plot
+p_race_avg<-ggplot(data_race_avg, aes(x = Subgroup, y = Average_Value, fill = Subgroup)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  labs(title = "Average Value by Race",
+       x = "Race",
+       y = "Average Value") 
+
+
+
+
+
+#plot of edu
+# Filter and prepare data for the specific indicator and by education, averaging over time
+data_education <- data %>%
+  filter(Group == "By Education", 
+         Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") 
+#gen along time line plot
+p_edu_t<-ggplot(data_education, aes(x = `Time Period`, y = Value, color = Subgroup)) +
+  geom_line() +
+  theme(legend.position = "bottom",
+         legend.direction = "vertical")+
+  labs(title = "Trends of Education Over Time",
+       x = "Time Period",
+       y = "Average Value",
+       color = "Education Level") 
+
+data_edu_avg <-data_education%>%
+  group_by(Subgroup) %>%
+  summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
+  ungroup()
+
+# Generate an averaged bar plot
+p_edu_avg<-ggplot(data_edu_avg, aes(x = Subgroup, y = Average_Value, fill = Subgroup)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  labs(title = "Average Value by Education Level",
+       x = "Education Level",
+       y = "Average Value") 
+
+
+
+#by age
+# Filter data for the specific indicator and by age
+data_age_summary <- data %>%
+  filter(Group == "By Age", 
+         Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") %>%
+  group_by(Subgroup) %>%
+  summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
+  ungroup()
+
+# Generate a line plot
+p_age_avg<-ggplot(data_age_summary, aes(x = Subgroup, y = Average_Value, group = 1)) +
+  geom_line() +
+  geom_point() +  # Add points to the line plot for clarity
+  labs(title = "Average Value by Age Group",
+       x = "Age Group",
+       y = "Average Value") 
+
+#sex plot
+# Filter and prepare data for the specific indicator and by education, averaging over time
+data_sex <- data %>%
+  filter(Group == "By Sex", 
+         Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") 
+#gen along time line plot
+p_sex_t<-ggplot(data_sex, aes(x = `Time Period`, y = Value, color = Subgroup)) +
+  geom_line() +
+  theme(legend.position = "bottom",
+         legend.direction = "vertical")+
+  labs(title = "Trends of sex Over Time",
+       x = "Time Period",
+       y = "Average Value",
+       color = "sex") 
+
+data_sex_avg <-data_sex%>%
+  group_by(Subgroup) %>%
+  summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
+  ungroup()
+
+# Generate an averaged bar plot
+p_sex_avg<-ggplot(data_sex_avg, aes(x = Subgroup, y = Average_Value, fill = Subgroup)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  labs(title = "Average Value by sex",
+       x = "sex",
+       y = "Average Value") 
+
+```
+### overall values across time:
+```{r,echo=FALSE}
+p_us_t
+```
+The x-value “Time Period” is a measure of 2-week phases, therefore 20 is 40 weeks from when they first started collecting data. The time period spans across an overall 90 week period. Thus, the first data obtain is on Aug 31, 2020, time period 30is May 24, 2021, and the time data is on May 9, 2022. We can see for all indicator, the average value of the mental problem is increase along the time.
+
+### detailed data summary
+
+For all the following analyze, we are focus on the indicator "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks" 
+
+#### general summary
+```{r,echo=FALSE}
+
+library(dplyr)
+library(knitr)
+
+
+data <- readRDS("dataset/cleaned_dataset.rds")
+
+filtered_data <- data %>%
+  filter(Group == "By State", 
+         Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") %>%
+  group_by(State) %>%
+  mutate(Average_Value = mean(Value, na.rm = TRUE))
+
+
+
+
+calculate_stats <- function(df, column) {
+  df %>%
+    summarise(
+      Min = min({{column}}, na.rm = TRUE),
+      Max = max({{column}}, na.rm = TRUE),
+      Mean = mean({{column}}, na.rm = TRUE)
+    )
+}
+
+# Generate stats for various categories
+race_stats <- data_race %>%
+  group_by(Subgroup) %>%
+  do(calculate_stats(., Value))
+
+sex_stats <- data_sex %>%
+  group_by(Subgroup) %>%
+  do(calculate_stats(., Value))
+
+education_stats <- data_education %>%
+  group_by(Subgroup) %>%
+  do(calculate_stats(., Value))
+
+age_stats <- data_age_summary %>%
+  do(calculate_stats(., Average_Value))
+
+
+state_stats <- data_state_avg %>%
+  do(calculate_stats(., Average_Value))
+
+# Combine all stats into one table
+all_stats <- bind_rows(
+  race_stats %>% mutate(Variable = paste(Subgroup, "along time")),
+  sex_stats %>% mutate(Variable = paste(Subgroup, "along time")),
+  education_stats %>% mutate(Variable = paste(Subgroup, "along time")),
+  age_stats%>%mutate(Variable = "age"),
+  state_stats%>%mutate(Variable = "state")
+) %>%
+  select(Variable, Min, Max, Mean)
+
+# Print the table
+all_stats<-all_stats[c("Variable", "Min", "Max", "Mean")]
+kable(all_stats)
+
+
+
+```
+
+
+
+
+#### race
+```{r,echo=FALSE}
+p_race_avg
+p_race_t
+```
+There is a difference in the average mental health scores between the races. From this graph, one case see that the race with the lowest mental health scores (engagement with mental health interventions), is Asian. It is then followed by Black, then Hispanic or Latino. And the races with the highest mental health scores are White and other race or multiple races. If you look at these values across time the order of these races in terms of mental health scores stay the same, but there are large variations among the Asian participants and the other races or multiple races. These two groups, as well as White participants, seem to have an increase in their mental health scores across time.
+
+#### sex
+```{r,echo=FALSE}
+p_sex_avg
+p_sex_t
+```
+There is a difference in the average mental health values between males and females. Across, time this difference remains equally prominent with females overall having higher mental health scores than males. This suggests that more females than males used mental health services. However, much like the other variables, there was a slight increase across time 
+
+#### education level
+```{r,echo=FALSE}
+p_edu_avg
+p_edu_t
+```
+It appears that there is some variation in use of mental health interventions across education levels. It appears people with greater education levels seem to have poorer mental health, however this could be correlated with age or other more significant factors. Interestingly, there seems to be great variation in the correlation between education levels and mental health across the 90-week period, as indicated by the second graph. But, in general, the percentage of people who require mental health intervention increases over time. 
+
+#### age
+```{r,echo=FALSE}
+p_age_avg
+```
+As one can see, there is a clear negative correlation between the percentage of people who required mental health intervention and age group, indicating as age increased the need for mental health resources (and the impact of mental health) decreased. One could say perhaps the younger population was more impacted by the social isolation that the COVID-19 posed.
+
+#### unemployment rate:
+
+by time across the USA:
+```{r, echo=FALSE}
+# Load necessary libraries
+library(dplyr)
+library(lubridate)
+
+filtered_data <- data %>%
+  filter(Group == "National Estimate", 
+         Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks")
+
+unrate_data <- read_csv("~/final-project-group-11/dataset/UNRATE.csv",col_types = cols(
+  DATE = col_date(format = ""),
+  UNRATE = col_double()
+))
+
+filtered_data <- filtered_data %>%
+  mutate(
+    Month = match(substr(`Time Period Label`, 1, 3), month.abb),
+    Year = as.integer(substr(`Time Period Label`, nchar(`Time Period Label`)-3, nchar(`Time Period Label`)))
+  )
+
+unrate_data <- unrate_data %>%
+  mutate(
+    Year = year(DATE),
+    Month = month(DATE)
+  )
+
+un_time_data <- left_join(filtered_data, unrate_data, by = c("Year", "Month"))
+
+un_time_data <- un_time_data %>%
+  select(Indicator, Group, `Time Period`, `Time Period Label`, Year, Month, Value, UNRATE)
+
+ggplot(un_time_data, aes(x = UNRATE, y = Value)) +
+  geom_point() +
+  labs(title = "Average Value by unemployment rate, observation per half month time",
+       x = "Unemployment rate",
+       y = "Value")
+
+
+```
+The unemployment rate by time vs the value shows a clear trend that when the unemployment rate is high, the mental health of whole country seems to be better.
+
+By state, average of all time:
+```{r,echo=FALSE}
+data <- readRDS("dataset/cleaned_dataset.rds")
+unemployment_data <- readRDS("dataset/clean_unemployment.rds")
+
+# Filter the main dataset for the specific indicator and for state-level data
+filtered_data <- data %>%
+  filter(Group == "By State", 
+         Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") %>%
+  group_by(State) %>%
+  summarize(Average_Value = mean(Value, na.rm = TRUE))
+
+# Prepare the unemployment data
+# Assuming the unemployment data contains columns 'State' and 'Average'
+unemployment_data_state <- unemployment_data %>%
+  rename(State = state) %>%
+  group_by(State) %>%
+  summarize(Average_Unemployment = mean(Average, na.rm = TRUE))
+
+# Merge the datasets
+combined_data <- left_join(filtered_data, unemployment_data_state, by = "State")
+
+# Generate the plot
+ggplot(combined_data, aes(x = Average_Unemployment, y = Average_Value, label = State)) +
+  geom_point() +
+  #geom_text(check_overlap = TRUE, hjust = 1.5, vjust = 1.5) +
+  labs(title = "State-wise Comparison of Mental Health Indicator and Unemployment Rate",
+       x = "Average Unemployment Rate (%)",
+       y = "Average Value of Mental Health Indicator") +
+  theme_minimal()
+# Continue from the previous combined dataset
+# Assuming combined_data contains the necessary merged data
+
+# Classify states based on unemployment rate
+median_unemployment_rate <- median(combined_data$Average_Unemployment, na.rm = TRUE)
+
+# Classify states based on the median unemployment rate
+combined_data <- combined_data %>%
+  mutate(Unemployment_Rate_Category = ifelse(Average_Unemployment < median_unemployment_rate, "< 5.13", ">= 5.13"))
+
+
+# Calculate mean values for each category
+category_means <- combined_data %>%
+  group_by(Unemployment_Rate_Category) %>%
+  summarize(Mean_Indicator_Value = mean(Average_Value, na.rm = TRUE))
+
+# Generate the bar plot
+ggplot(category_means, aes(x = Unemployment_Rate_Category, y = Mean_Indicator_Value, fill = Unemployment_Rate_Category)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Mean Mental Health Indicator Value by Unemployment Rate Category",
+       x = "Unemployment Rate Category",
+       y = "Mean Indicator Value") +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Pastel1") # Optional: for better color distinction
+```
+The unemployment rate by state vs the value also shows a trend that the lower unemployment rate in fact increase the mental health problem. The bar chart is divided by the median of the unemployment rate(5.5%), it also shows that the higher unemployment rate usually indicate a better mental health
+

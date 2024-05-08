@@ -29,17 +29,14 @@ For all the following analyze, we are focus on the indicator "Took Prescription 
 ```{r, echo=FALSE}
 library(ggplot2)
 library(readr)
-library(dplyr)
-
-# Read the data
+suppressPackageStartupMessages(library(dplyr))
+options(warn = -1)
 data <- readRDS("~/final-project-group-11/dataset/cleaned_dataset.rds")
 
-# Filter data for national estimates and focus only on relevant columns
 national_data <- data %>%
   filter(Group == "National Estimate") %>%
   select(Indicator,`Time Period`, `Time Period Label`, Value)
 
-# Generate a line plot
 p_us_t<-ggplot(national_data, aes(x = `Time Period`, y = Value, color = Indicator)) +
   geom_line() +
   theme(legend.position = "bottom",
@@ -66,7 +63,6 @@ data_race <- data %>%
   filter(Group == "By Race/Hispanic ethnicity", 
          Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") 
 
-#gen along time line plot
 p_race_t<-ggplot(data_race, aes(x = `Time Period`, y = Value, color = Subgroup)) +
   geom_line() +
   theme(legend.position = "bottom",
@@ -81,7 +77,6 @@ data_race_avg <-data_race%>%
   summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
   ungroup()
 
-# Generate an averaged bar plot
 p_race_avg<-ggplot(data_race_avg, aes(x = Subgroup, y = Average_Value, fill = Subgroup)) +
   geom_bar(stat = "identity", position = position_dodge()) +
   labs(title = "Average Value by Race",
@@ -91,13 +86,9 @@ p_race_avg<-ggplot(data_race_avg, aes(x = Subgroup, y = Average_Value, fill = Su
 
 
 
-
-#plot of edu
-# Filter and prepare data for the specific indicator and by education, averaging over time
 data_education <- data %>%
   filter(Group == "By Education", 
          Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") 
-#gen along time line plot
 p_edu_t<-ggplot(data_education, aes(x = `Time Period`, y = Value, color = Subgroup)) +
   geom_line() +
   theme(legend.position = "bottom",
@@ -112,7 +103,6 @@ data_edu_avg <-data_education%>%
   summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
   ungroup()
 
-# Generate an averaged bar plot
 p_edu_avg<-ggplot(data_edu_avg, aes(x = Subgroup, y = Average_Value, fill = Subgroup)) +
   geom_bar(stat = "identity", position = position_dodge()) +
   labs(title = "Average Value by Education Level",
@@ -120,9 +110,6 @@ p_edu_avg<-ggplot(data_edu_avg, aes(x = Subgroup, y = Average_Value, fill = Subg
        y = "Average Value") 
 
 
-
-#by age
-# Filter data for the specific indicator and by age
 data_age_summary <- data %>%
   filter(Group == "By Age", 
          Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") %>%
@@ -130,7 +117,6 @@ data_age_summary <- data %>%
   summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
   ungroup()
 
-# Generate a line plot
 p_age_avg<-ggplot(data_age_summary, aes(x = Subgroup, y = Average_Value, group = 1)) +
   geom_line() +
   geom_point() +  # Add points to the line plot for clarity
@@ -138,12 +124,10 @@ p_age_avg<-ggplot(data_age_summary, aes(x = Subgroup, y = Average_Value, group =
        x = "Age Group",
        y = "Average Value") 
 
-#sex plot
-# Filter and prepare data for the specific indicator and by education, averaging over time
 data_sex <- data %>%
   filter(Group == "By Sex", 
          Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") 
-#gen along time line plot
+
 p_sex_t<-ggplot(data_sex, aes(x = `Time Period`, y = Value, color = Subgroup)) +
   geom_line() +
   theme(legend.position = "bottom",
@@ -158,7 +142,6 @@ data_sex_avg <-data_sex%>%
   summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
   ungroup()
 
-# Generate an averaged bar plot
 p_sex_avg<-ggplot(data_sex_avg, aes(x = Subgroup, y = Average_Value, fill = Subgroup)) +
   geom_bar(stat = "identity", position = position_dodge()) +
   labs(title = "Average Value by sex",
@@ -172,7 +155,7 @@ p_sex_avg<-ggplot(data_sex_avg, aes(x = Subgroup, y = Average_Value, fill = Subg
 
 ```{r,echo=FALSE}
 
-library(dplyr)
+suppressPackageStartupMessages(library(dplyr))
 library(knitr)
 
 
@@ -196,7 +179,6 @@ calculate_stats <- function(df, column) {
     )
 }
 
-# Generate stats for various categories
 race_stats <- data_race %>%
   group_by(Subgroup) %>%
   do(calculate_stats(., Value))
@@ -216,7 +198,6 @@ age_stats <- data_age_summary %>%
 state_stats <- data_state_avg %>%
   do(calculate_stats(., Average_Value))
 
-# Combine all stats into one table
 all_stats <- bind_rows(
   race_stats %>% mutate(Variable = paste(Subgroup, "along time")),
   sex_stats %>% mutate(Variable = paste(Subgroup, "along time")),
@@ -266,9 +247,8 @@ As one can see, there is a clear negative correlation between the percentage of 
 
 by time across the USA:
 ```{r, echo=FALSE}
-# Load necessary libraries
 library(dplyr)
-library(lubridate)
+suppressPackageStartupMessages(library(lubridate))
 
 filtered_data <- data %>%
   filter(Group == "National Estimate", 
@@ -311,24 +291,20 @@ By state, average of all time:
 data <- readRDS("dataset/cleaned_dataset.rds")
 unemployment_data <- readRDS("dataset/clean_unemployment.rds")
 
-# Filter the main dataset for the specific indicator and for state-level data
 filtered_data <- data %>%
   filter(Group == "By State", 
          Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") %>%
   group_by(State) %>%
   summarize(Average_Value = mean(Value, na.rm = TRUE))
 
-# Prepare the unemployment data
-# Assuming the unemployment data contains columns 'State' and 'Average'
+
 unemployment_data_state <- unemployment_data %>%
   rename(State = state) %>%
   group_by(State) %>%
   summarize(Average_Unemployment = mean(Average, na.rm = TRUE))
 
-# Merge the datasets
 combined_data <- left_join(filtered_data, unemployment_data_state, by = "State")
 
-# Generate the plot
 ggplot(combined_data, aes(x = Average_Unemployment, y = Average_Value, label = State)) +
   geom_point() +
   #geom_text(check_overlap = TRUE, hjust = 1.5, vjust = 1.5) +
@@ -336,23 +312,18 @@ ggplot(combined_data, aes(x = Average_Unemployment, y = Average_Value, label = S
        x = "Average Unemployment Rate (%)",
        y = "Average Value of Mental Health Indicator") +
   theme_minimal()
-# Continue from the previous combined dataset
-# Assuming combined_data contains the necessary merged data
 
-# Classify states based on unemployment rate
+
 median_unemployment_rate <- median(combined_data$Average_Unemployment, na.rm = TRUE)
 
-# Classify states based on the median unemployment rate
 combined_data <- combined_data %>%
   mutate(Unemployment_Rate_Category = ifelse(Average_Unemployment < median_unemployment_rate, "< 5.13", ">= 5.13"))
 
 
-# Calculate mean values for each category
 category_means <- combined_data %>%
   group_by(Unemployment_Rate_Category) %>%
   summarize(Mean_Indicator_Value = mean(Average_Value, na.rm = TRUE))
 
-# Generate the bar plot
 ggplot(category_means, aes(x = Unemployment_Rate_Category, y = Mean_Indicator_Value, fill = Unemployment_Rate_Category)) +
   geom_bar(stat = "identity") +
   labs(title = "Mean Mental Health Indicator Value by Unemployment Rate Category",
@@ -367,4 +338,18 @@ The unemployment rate by state vs the value also shows a trend that the lower un
 ## DATA ANALYSIS
 
 Please refer to the data analysis page for our overall findings. 
+
+## video
+
+![](images/video1432512419.mp4)
+
+
+
+
+
+
+
+
+
+
 

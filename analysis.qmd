@@ -28,49 +28,44 @@ The key relationship we are most interested in examining is the correlation betw
 This analysis seeks to answer the following questions:
 
 How has the unemployment rate influenced mental health conditions during the pandemic years?
-Are there significant differences in mental health across different age groups and genders?
+Are there significant differences in mental health across different race groups and genders?
 Has there been an increase in the use of mental health services correlating with changes in the unemployment rate?
 
 # model
 
+## unemployment
+
+### level-level
+
 ```{r,echo=FALSE}
-library(dplyr)
+#library(dplyr)
 library(ggplot2)
 library(broom)
 library(knitr)
+suppressPackageStartupMessages(library(dplyr))
 
-# Read the datasets
 data <- readRDS("dataset/cleaned_dataset.rds")
 unemployment_data <- readRDS("dataset/clean_unemployment.rds")
-
-# Prepare the unemployment data
 unemployment_data_state <- unemployment_data %>%
   rename(State = state) %>%
   group_by(State) %>%
   summarize(Average_Unemployment = mean(Average, na.rm = TRUE), .groups = "drop")
 
-# Calculate the U.S. national average unemployment rate from the state averages
 us_unemployment <- mean(unemployment_data_state$Average_Unemployment, na.rm = TRUE)
 
-# Replace NA values in Average_Unemployment with the U.S. national average
 unemployment_data_state <- unemployment_data_state %>%
   mutate(Average_Unemployment = ifelse(is.na(Average_Unemployment), us_unemployment, Average_Unemployment))
 
-# Continue with filtering the main dataset for the specific indicator and state-level data
 filtered_data <- data %>%
   filter(Group == "By State", 
          Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") %>%
   group_by(State) %>%
   summarize(Average_Value = mean(Value, na.rm = TRUE), .groups = "drop")
-
-# Merge the datasets
 combined_data <- left_join(filtered_data, unemployment_data_state, by = "State")
 
-# Optional: Proceed with regression analysis or further data manipulation
-# Example of regression:
+
 model <- lm(Average_Value ~ Average_Unemployment, data = combined_data)
 
-# Optionally, plot the data and the fitted model line
 ggplot(combined_data, aes(x = Average_Unemployment, y = Average_Value)) +
   geom_point() +
   geom_smooth(method = "lm", col = "blue") +
@@ -119,7 +114,6 @@ library(broom)
 library(knitr)
 
 
-
 data <- readRDS("dataset/cleaned_dataset.rds")
 unemployment_data <- readRDS("dataset/clean_unemployment.rds")
 
@@ -154,6 +148,7 @@ model <- lm(Average_Value ~ Average_Unemployment, data = combined_data)
 
 qqnorm(residuals(model), main = "QQ Plot of Residuals")
 qqline(residuals(model), col = "red", lwd = 2)
+graphics.off()
 
 png("QQ_Plot.png")
 qqnorm(residuals(model), main = "QQ Plot of Residuals")
@@ -183,10 +178,33 @@ $Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ �
 |Max|0.19794 |
 based on the plot and summary of the model, log-level models seems work better than level-level model, so we do more advanced check on this model.
 it indicated that one percent in crease in unemployment rate will cause the value decrease by 0.04233%.
-Also, we graph the qq plot, and see most of the point are around the line, indicated that most the residual is approximatelly normally distributed.
+Also, we graph the qq plot, and see most of the point are around the line, indicated that most the residual is approximately normally distributed.
 
 
+## race
+```{r,echo=FALSE}
+main_data <- readRDS("~/final-project-group-11/dataset/cleaned_dataset.rds")
+filtered_data_race <- main_data %>%
+  filter(Group == "By Race/Hispanic ethnicity", 
+         Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks")
+Y <- filtered_data_race$Value
+X <- filtered_data_race$Subgroup
+model <- lm(Y~X, data=filtered_data_race)
+```
+|Coefficients|estimate|std.error|t value|Pr(>|t|)|
+|------------|-------|----------|-------|-----------------------------|
+|intercept|19.5818|0.2851|54.822| <2e-16 ***|
+|XNon-Hispanic Asian, single race| -6.9121| 0.4032 |-17.144|<2e-16 ***|
+|XNon-Hispanic Black, single race|-0.2364| 0.4032 |-0.586|0.559|
+|XNon-Hispanic White, single race|8.1697 | 0.4032 |20.263|<2e-16 ***|
+|XNon-Hispanic,other races and multiple races|9.0273| 0.4032 |22.390|<2e-16 ***|
+$Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1$
 
+according to this model, although without any numeral data, prediction is not very sufficient , but the p-value has indicate that it is statistically significant that the race of Asain, Black, multiple races are good indicator of the mental health value.
+
+## limitation:
+
+the limitation of our fitted model is that, we have very limited numeral data, so the R^2 of the model is relatively low. However, it still provide a great aspect of predicting the mentel health level. 
 
 
 

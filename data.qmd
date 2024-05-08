@@ -143,17 +143,14 @@ we also include another unemployment data
 ```{r, echo=FALSE}
 library(ggplot2)
 library(readr)
-library(dplyr)
+suppressPackageStartupMessages(library(dplyr))
 
-# Read the data
 data <- readRDS("~/final-project-group-11/dataset/cleaned_dataset.rds")
 
-# Filter data for national estimates and focus only on relevant columns
 national_data <- data %>%
   filter(Group == "National Estimate") %>%
   select(Indicator,`Time Period`, `Time Period Label`, Value)
 
-# Generate a line plot
 p_us_t<-ggplot(national_data, aes(x = `Time Period`, y = Value, color = Indicator)) +
   geom_line() +
   theme(legend.position = "bottom",
@@ -180,7 +177,6 @@ data_race <- data %>%
   filter(Group == "By Race/Hispanic ethnicity", 
          Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") 
 
-#gen along time line plot
 p_race_t<-ggplot(data_race, aes(x = `Time Period`, y = Value, color = Subgroup)) +
   geom_line() +
   theme(legend.position = "bottom",
@@ -195,7 +191,6 @@ data_race_avg <-data_race%>%
   summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
   ungroup()
 
-# Generate an averaged bar plot
 p_race_avg<-ggplot(data_race_avg, aes(x = Subgroup, y = Average_Value, fill = Subgroup)) +
   geom_bar(stat = "identity", position = position_dodge()) +
   labs(title = "Average Value by Race",
@@ -207,11 +202,9 @@ p_race_avg<-ggplot(data_race_avg, aes(x = Subgroup, y = Average_Value, fill = Su
 
 
 #plot of edu
-# Filter and prepare data for the specific indicator and by education, averaging over time
 data_education <- data %>%
   filter(Group == "By Education", 
          Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") 
-#gen along time line plot
 p_edu_t<-ggplot(data_education, aes(x = `Time Period`, y = Value, color = Subgroup)) +
   geom_line() +
   theme(legend.position = "bottom",
@@ -226,7 +219,6 @@ data_edu_avg <-data_education%>%
   summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
   ungroup()
 
-# Generate an averaged bar plot
 p_edu_avg<-ggplot(data_edu_avg, aes(x = Subgroup, y = Average_Value, fill = Subgroup)) +
   geom_bar(stat = "identity", position = position_dodge()) +
   labs(title = "Average Value by Education Level",
@@ -236,7 +228,6 @@ p_edu_avg<-ggplot(data_edu_avg, aes(x = Subgroup, y = Average_Value, fill = Subg
 
 
 #by age
-# Filter data for the specific indicator and by age
 data_age_summary <- data %>%
   filter(Group == "By Age", 
          Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") %>%
@@ -244,7 +235,6 @@ data_age_summary <- data %>%
   summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
   ungroup()
 
-# Generate a line plot
 p_age_avg<-ggplot(data_age_summary, aes(x = Subgroup, y = Average_Value, group = 1)) +
   geom_line() +
   geom_point() +  # Add points to the line plot for clarity
@@ -253,11 +243,10 @@ p_age_avg<-ggplot(data_age_summary, aes(x = Subgroup, y = Average_Value, group =
        y = "Average Value") 
 
 #sex plot
-# Filter and prepare data for the specific indicator and by education, averaging over time
 data_sex <- data %>%
   filter(Group == "By Sex", 
          Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") 
-#gen along time line plot
+
 p_sex_t<-ggplot(data_sex, aes(x = `Time Period`, y = Value, color = Subgroup)) +
   geom_line() +
   theme(legend.position = "bottom",
@@ -272,7 +261,6 @@ data_sex_avg <-data_sex%>%
   summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
   ungroup()
 
-# Generate an averaged bar plot
 p_sex_avg<-ggplot(data_sex_avg, aes(x = Subgroup, y = Average_Value, fill = Subgroup)) +
   geom_bar(stat = "identity", position = position_dodge()) +
   labs(title = "Average Value by sex",

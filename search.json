@@ -203,6 +203,13 @@
     "text": "Research Questions\nThis analysis seeks to answer the following questions:\nHow has the unemployment rate influenced mental health conditions during the pandemic years? Are there significant differences in mental health across different age groups and genders? Has there been an increase in the use of mental health services correlating with changes in the unemployment rate?"
   },
   {
+    "objectID": "analysis.html#limitation",
+    "href": "analysis.html#limitation",
+    "title": "Analysis",
+    "section": "limitation:",
+    "text": "limitation:\nthe limitation of our fitted model is that, we have very limited numeral data, so the R^2 of the model is relatively low. However, it still provide a great aspect of predicting the mentel health level."
+  },
+  {
     "objectID": "big_picture.html",
     "href": "big_picture.html",
     "title": "Investigating Mental Health",
@@ -229,6 +236,13 @@
     "title": "Investigating Mental Health",
     "section": "DATA ANALYSIS",
     "text": "DATA ANALYSIS\nPlease refer to the data analysis page for our overall findings."
+  },
+  {
+    "objectID": "big_picture.html#video",
+    "href": "big_picture.html#video",
+    "title": "Investigating Mental Health",
+    "section": "video",
+    "text": "video\nVideo"
   },
   {
     "objectID": "data.html#cleaning",

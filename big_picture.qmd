@@ -5,7 +5,7 @@ toc: true
 draft: FALSE
 ---
 
-![](images/The_Big_Picture_2.jpeg)
+![](images/Covid.jpg)
 ## Investigating Mental Health as a Virtue of the Pandemic and Other Demographic Factors 
 
 ### Introduction
@@ -216,11 +216,12 @@ ggplot(category_means, aes(x = Unemployment_Rate_Category, y = Mean_Indicator_Va
   theme_minimal() +
   scale_fill_brewer(palette = "Pastel1") # Optional: for better color distinction
 ```
-The unemployment rate by state vs the value also shows a trend that the lower unemployment rate in fact increase the mental health problem. The bar chart is divided by the median of the unemployment rate(5.5%), it also shows that the higher unemployment rate usually indicate a better mental health
+The unemployment rate by state vs the value also shows a trend that the lower unemployment rate in fact increase the mental health problem. The bar chart is divided by the median of the unemployment rate (5.5%), it also shows that the higher unemployment rate usually indicate a better mental health
 
 
+## DATA ANALYSIS
 
-
+Please refer to the data analysis page for our overall findings. 
 
 This comes from the file `big_picture.Rmd`.
 

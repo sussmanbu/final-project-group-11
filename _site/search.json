@@ -182,74 +182,67 @@
     "text": "Jack McCormick\nJack is a third year data science student.\n\n\nAbout this Template.\nThis is based off of the standard Quarto website template from RStudio (2023.09.0 Build 463)."
   },
   {
-    "objectID": "analysis.html",
-    "href": "analysis.html",
+    "objectID": "analysis.html#introduction-to-data-analysis-on-the-impact-of-unemployment-on-mental-health-during-the-pandemic",
+    "href": "analysis.html#introduction-to-data-analysis-on-the-impact-of-unemployment-on-mental-health-during-the-pandemic",
     "title": "Analysis",
-    "section": "",
-    "text": "This comes from the file analysis.qmd.\nWe describe here our detailed data analysis. This page will provide an overview of what questions you addressed, illustrations of relevant aspects of the data with tables and figures, and a statistical model that attempts to answer part of the question. You’ll also reflect on next steps and further analysis.\nThe audience for this page is someone like your class mates, so you can expect that they have some level of statistical and quantitative sophistication and understand ideas like linear and logistic regression, coefficients, confidence intervals, overfitting, etc.\nWhile the exact number of figures and tables will vary and depend on your analysis, you should target around 5 to 6. An overly long analysis could lead to losing points. If you want you can link back to your blog posts or create separate pages with more details.\nThe style of this paper should aim to be that of an academic paper. I don’t expect this to be of publication quality but you should keep that aim in mind. Avoid using “we” too frequently, for example “We also found that …”. Describe your methodology and your findings but don’t describe your whole process."
+    "section": "Introduction to Data Analysis on the Impact of Unemployment on Mental Health during the Pandemic",
+    "text": "Introduction to Data Analysis on the Impact of Unemployment on Mental Health during the Pandemic\nThe COVID-19 pandemic has had a profound impact on global health and economic stability, touching all aspects of life, including mental well-being. Given the widespread changes and challenges, there has been a renewed focus on mental health, particularly as it relates to economic stresses like unemployment. This analysis aims to explore the complex relationship between unemployment and mental health during these challenging times."
   },
   {
-    "objectID": "analysis.html#note-on-attribution",
-    "href": "analysis.html#note-on-attribution",
+    "objectID": "analysis.html#variables-and-relationships-of-interest",
+    "href": "analysis.html#variables-and-relationships-of-interest",
     "title": "Analysis",
-    "section": "Note on Attribution",
-    "text": "Note on Attribution\nIn general, you should try to provide links to relevant resources, especially those that helped you. You don’t have to link to every StackOverflow post you used but if there are explainers on aspects of the data or specific models that you found helpful, try to link to those. Also, try to link to other sources that might support (or refute) your analysis. These can just be regular hyperlinks. You don’t need a formal citation.\nIf you are directly quoting from a source, please make that clear. You can show quotes using > like this\n> To be or not to be.\n\nTo be or not to be."
+    "section": "Variables and Relationships of Interest",
+    "text": "Variables and Relationships of Interest\nThe primary variables of interest in this analysis are:\nUnemployment Rate: Measured monthly or annually, it reflects the percentage of the labor force that is jobless and actively seeking employment. Mental Health Metrics: This could include data on the prevalence of mental health conditions, rates of mental health service utilization, and frequencies of mental health-related symptoms reported by different demographics. Demographic Information: Including age and gender, which may influence how unemployment impacts mental health. The key relationship we are most interested in examining is the correlation between rising unemployment rates and changes in mental health status among different demographic groups."
   },
   {
-    "objectID": "analysis.html#rubric-on-this-page",
-    "href": "analysis.html#rubric-on-this-page",
+    "objectID": "analysis.html#research-questions",
+    "href": "analysis.html#research-questions",
     "title": "Analysis",
-    "section": "Rubric: On this page",
-    "text": "Rubric: On this page\nYou will\n\nIntroduce what motivates your Data Analysis (DA)\n\nWhich variables and relationships are you most interested in?\nWhat questions are you interested in answering?\nProvide context for the rest of the page. This will include figures/tables that illustrate aspects of the data of your question.\n\nModeling and Inference\n\nThe page will include some kind of formal statistical model. This could be a linear regression, logistic regression, or another modeling framework.\nExplain the ideas and techniques you used to choose the predictors for your model. (Think about including interaction terms and other transformations of your variables.)\nDescribe the results of your modelling and make sure to give a sense of the uncertainty in your estimates and conclusions.\n\nExplain the flaws and limitations of your analysis\n\nAre there some assumptions that you needed to make that might not hold? Is there other data that would help to answer your questions?\n\nClarity Figures\n\nAre your figures/tables/results easy to read, informative, without problems like overplotting, hard-to-read labels, etc?\nEach figure should provide a key insight. Too many figures or other data summaries can detract from this. (While not a hard limit, around 5 total figures is probably a good target.)\nDefault lm output and plots are typically not acceptable.\n\nClarity of Explanations\n\nHow well do you explain each figure/result?\nDo you provide interpretations that suggest further analysis or explanations for observed phenomenon?\n\nOrganization and cleanliness.\n\nMake sure to remove excessive warnings, hide most or all code, organize with sections or multiple pages, use bullets, etc.\nThis page should be self-contained, i.e. provide a description of the relevant data.\n\n\n———————————-keep———————————————- # motivates:"
+    "section": "Research Questions",
+    "text": "Research Questions\nThis analysis seeks to answer the following questions:\nHow has the unemployment rate influenced mental health conditions during the pandemic years? Are there significant differences in mental health across different age groups and genders? Has there been an increase in the use of mental health services correlating with changes in the unemployment rate?"
   },
   {
     "objectID": "big_picture.html",
     "href": "big_picture.html",
-    "title": "Big Picture",
+    "title": "Investigating Mental Health",
     "section": "",
-    "text": "This comes from the file big_picture.Rmd.\nThink of this page as your 538/Upshot style article. This means that you should try to tell a story through the data and your analysis. Read articles from those sites and similar sites to get a feeling for what they are like. Try to write in the style of a news or popular article. Importantly, this pge should be geared towards the general public. You shouldn’t assume the reader understands how to interpret a linear regression. Focus on interpretation and visualizations."
+    "text": "## Investigating Mental Health as a Virtue of the Pandemic and Other Demographic Factors"
+  },
+  {
+    "objectID": "big_picture.html#thesis",
+    "href": "big_picture.html#thesis",
+    "title": "Investigating Mental Health",
+    "section": "Thesis:",
+    "text": "Thesis:\nWe believe that as unemployment increases, and income decreases, due to the pandemic, mental health scores for anxiety and depression will increase, and so will seeking mental health resources. This is why we compare the data from 2020 to 2022 to see if these got better in a post-lockdown world."
+  },
+  {
+    "objectID": "big_picture.html#data-and-methodology",
+    "href": "big_picture.html#data-and-methodology",
+    "title": "Investigating Mental Health",
+    "section": "Data and Methodology",
+    "text": "Data and Methodology\nWe have brought together data from the CDC, regarding mental health, and data on unemployment, education levels and GDP from the U.S. Bureau of Labor Statistics. By analyzing these variables, we hope to be able to understand variables that impacted people’s mental health during the COVID-19 pandemic. Below, we have graphed each demographic variable with the average percent of people who required mental health intervention (as indicated by the variable “Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks”).\nThe x-value “Time Period” is a measure of 2-week phases, therefore 20 is 40 weeks from when they first started collecting data. The time period spans across an overall 90 week period. Thus, the first data obtain is on Aug 31, 2020, time period 30 is May 24, 2021, and the time data is on May 9, 2022. We can see for all indicator, the average value of the mental problem is increase along the time.\n\ndetailed data summary\nFor all the following analyze, we are focus on the indicator “Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks”\n\ngeneral summary\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\n\n\nAdding missing grouping variables: `Subgroup`\n\n\n\n\n\n\n\n\n\n\n\nVariable\nMin\nMax\nMean\n\n\n\n\nHispanic or Latino along time\n17.20000\n23.20000\n19.58182\n\n\nNon-Hispanic Asian, single race along time\n10.30000\n15.90000\n12.66970\n\n\nNon-Hispanic Black, single race along time\n15.60000\n21.50000\n19.34545\n\n\nNon-Hispanic White, single race along time\n25.10000\n30.20000\n27.75152\n\n\nNon-Hispanic, other races and multiple races along time\n23.70000\n32.90000\n28.60909\n\n\nFemale along time\n27.50000\n33.80000\n30.69091\n\n\nMale along time\n16.30000\n20.20000\n18.49394\n\n\nBachelor’s degree or higher along time\n23.80000\n28.40000\n26.06970\n\n\nHigh school diploma or GED along time\n19.40000\n25.10000\n21.92727\n\n\nLess than a high school diploma along time\n15.80000\n25.40000\n21.20606\n\n\nSome college/Associate’s degree along time\n23.50000\n30.00000\n27.15455\n\n\nage\n16.46667\n27.18182\n23.65541\n\n\nstate\n16.93030\n30.74242\n25.95799\n\n\n\n\n\n\n\nrace\n\n\n\n\n\n\n\n\nThere is a difference in the average mental health scores between the races. From this graph, one case see that the race with the lowest mental health scores (engagement with mental health interventions), is Asian. It is then followed by Black, then Hispanic or Latino. And the races with the highest mental health scores are White and other race or multiple races. If you look at these values across time the order of these races in terms of mental health scores stay the same, but there are large variations among the Asian participants and the other races or multiple races. These two groups, as well as White participants, seem to have an increase in their mental health scores across time.\n\n\nsex\n\n\n\n\n\n\n\n\nThere is a difference in the average mental health values between males and females. Across, time this difference remains equally prominent with females overall having higher mental health scores than males. This suggests that more females than males used mental health services. However, much like the other variables, there was a slight increase across time\n\n\neducation level\n\n\n\n\n\n\n\n\nIt appears that there is some variation in use of mental health interventions across education levels. It appears people with greater education levels seem to have poorer mental health, however this could be correlated with age or other more significant factors. Interestingly, there seems to be great variation in the correlation between education levels and mental health across the 90-week period, as indicated by the second graph. But, in general, the percentage of people who require mental health intervention increases over time.\n\n\nage\n\n\n\n\n\nAs one can see, there is a clear negative correlation between the percentage of people who required mental health intervention and age group, indicating as age increased the need for mental health resources (and the impact of mental health) decreased. One could say perhaps the younger population was more impacted by the social isolation that the COVID-19 posed.\n\n\nunemployment rate:\nby time across the USA:\n\n\n\nAttaching package: 'lubridate'\n\n\nThe following objects are masked from 'package:base':\n\n    date, intersect, setdiff, union\n\n\nWarning: Removed 1 rows containing missing values (`geom_point()`).\n\n\n\n\n\nThe unemployment rate by time vs the value shows a clear trend that when the unemployment rate is high, the mental health of whole country seems to be better.\nBy state, average of all time:\n\n\n\n\n\n\n\n\nThe unemployment rate by state vs the value also shows a trend that the lower unemployment rate in fact increase the mental health problem. The bar chart is divided by the median of the unemployment rate (5.5%), it also shows that the higher unemployment rate usually indicate a better mental health"
+  },
+  {
+    "objectID": "big_picture.html#data-analysis",
+    "href": "big_picture.html#data-analysis",
+    "title": "Investigating Mental Health",
+    "section": "DATA ANALYSIS",
+    "text": "DATA ANALYSIS\nPlease refer to the data analysis page for our overall findings."
   },
   {
     "objectID": "big_picture.html#rubric-on-this-page",
     "href": "big_picture.html#rubric-on-this-page",
-    "title": "Big Picture",
+    "title": "Investigating Mental Health",
     "section": "Rubric: On this page",
     "text": "Rubric: On this page\nYou will\n\nTitle\n\nYour big picture page should have a creative/click-bait-y title/headline that provides a hint about your thesis.\n\nClarity of Explanation\n\nYou should have a clear thesis/goal for this page. What are you trying to show? Make sure that you explain your analysis in detail but don’t go into top much mathematics or statistics. The audience for this page is the general public (to the extent possible). Your thesis should be a statement, not a question.\nEach figure should be very polished and also not too complicated. There should be a clear interpretation of the figure so the figure has a clear purpose. Even something like a histogram can be difficult to interpret for non-experts.\n\nCreativity\n\nDo your best to make things interesting. Think of a story. Think of how each part of your analysis supports the previous part or provides a different perspective.\n\nThis page should be self-contained.\n\nNote: This page should have no code visible, i.e. use #| echo: FALSE."
   },
   {
     "objectID": "big_picture.html#rubric-other-components",
     "href": "big_picture.html#rubric-other-components",
-    "title": "Big Picture",
+    "title": "Investigating Mental Health",
     "section": "Rubric: Other components",
     "text": "Rubric: Other components\n\nInteractive\nYou will also be required to make an interactive dashboard like this one.\nYour Big Data page should include a link to an interactive dashboard. The dashboard should be created either using Shiny or FlexDashboard (or another tool with professor’s approval). This interactive component should in some way support your thesis from your big picture page. Good interactives often provide both high-level understanding of the data while allowing a user to investigate specific scenarios, observations, subgroups, etc.\n\nQuality and ease of use of the interactive components. Is it clear what can be explored using your interactive components? Does it enhance and reinforce your conclusions from the Big Picture? Plotly with default hover text will get no credit. Be creative!\n\n\n\nVideo Recording\nMake a video recording (probably using Zoom) demonstrating your interactive components. You should provide a quick explanation of your data and demonstrate some of the conclusions from your EDA. This video should be no longer than 4 minutes. Include a link to your video (and password if needed) in your README.md file on your Github repository. You are not required to provide a link on the website. This can be presented by any subset of the team members.\n\n\nRest of the Site\nFinally, here are important things to keep in mind for the rest of the site.\nThe main title of your page is informative. Each post has an author/description/informative title. All lab required posts are present. Each page (including the home page) has a nice featured image associated with it. Your about page is up to date and clean. You have removed the generic posts from the initial site template."
-  },
-  {
-    "objectID": "data.html",
-    "href": "data.html",
-    "title": "Data",
-    "section": "",
-    "text": "This comes from the file data.qmd.\nYour first steps in this project will be to find data to work on.\nI recommend trying to find data that interests you and that you are knowledgeable about. A bad example would be if you have no interest in video games but your data set is about video games. I also recommend finding data that is related to current events, social justice, and other areas that have an impact.\nInitially, you will study one dataset but later you will need to combine that data with another dataset. For this reason, I recommend finding data that has some date and/or location components. These types of data are conducive to interesting visualizations and analysis and you can also combine this data with other data that also has a date or location variable. Data from the census, weather data, economic data, are all relatively easy to combine with other data with time/location components."
-  },
-  {
-    "objectID": "data.html#what-makes-a-good-data-set",
-    "href": "data.html#what-makes-a-good-data-set",
-    "title": "Data",
-    "section": "What makes a good data set?",
-    "text": "What makes a good data set?\n\nData you are interested in and care about.\nData where there are a lot of potential questions that you can explore.\nA data set that isn’t completely cleaned already.\nMultiple sources for data that you can combine.\nSome type of time and/or location component."
-  },
-  {
-    "objectID": "data.html#where-to-keep-data",
-    "href": "data.html#where-to-keep-data",
-    "title": "Data",
-    "section": "Where to keep data?",
-    "text": "Where to keep data?\nBelow 50mb: In dataset folder\nAbove 50mb: In dataset_ignore folder. This folder will be ignored by git so you’ll have to manually sync these files across your team.\n\nSharing your data\nFor small datasets (<50mb), you can use the dataset folder that is tracked by github. Add the files just like you would any other file.\nIf you create a folder named data this will cause problems.\nFor larger datasets, you’ll need to create a new folder in the project root directory named dataset-ignore. This will be ignored by git (based off the .gitignore file in the project root directory) which will help you avoid issues with Github’s size limits. Your team will have to manually make sure the data files in dataset-ignore are synced across team members.\nYour load_and_clean_data.R file is how you will load and clean your data. Here is a an example of a very simple one.\n\nsource(\n  \"scripts/load_and_clean_data.R\",\n  echo = TRUE # Use echo=FALSE or omit it to avoid code output  \n)\n\n\n> library(tidyverse)\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors\n\n\n\n> loan_data <- read_csv(here::here(\"dataset\", \"loan_refusal.csv\"))\n\n\nRows: 20 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): bank\ndbl (4): min, white, himin, hiwhite\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n> loan_data_clean <- loan_data\n\n> write_csv(loan_data_clean, file = here::here(\"dataset\", \n+     \"loan_refusal_clean.csv\"))\n\n> save(loan_data_clean, file = here::here(\"dataset/loan_refusal.RData\"))\n\n\nYou should never use absolute paths (eg. /Users/danielsussman/path/to/project/ or C:\\MA415\\\\Final_Project\\).\nYou might consider using the here function from the here package to avoid path problems.\n\n\nLoad and clean data script\nThe idea behind this file is that someone coming to your website could largely replicate your analyses after running this script on the original data sets to clean them. This file might create a derivative data set that you then use for your subsequent analysis. Note that you don’t need to run this script from every post/page. Instead, you can load in the results of this script, which could be plain text files or .RData files. In your data page you’ll describe how these results were created. If you have a very large data set, you might save smaller data sets that you can use for exploration purposes. To link to this file, you can use [cleaning script](/scripts/load_and_clean_data.R) wich appears as cleaning script."
-  },
-  {
-    "objectID": "data.html#rubric-on-this-page",
-    "href": "data.html#rubric-on-this-page",
-    "title": "Data",
-    "section": "Rubric: On this page",
-    "text": "Rubric: On this page\nYou will\n\nDescribe where/how to find data.\n\nYou must include a link to the original data source(s). Make sure to provide attribution to those who collected the data.\nWhy was the data collected/curated? Who put it together? (This is important, if you don’t know why it was collected then that might not be a good dataset to look at.\n\nDescribe the different data files used and what each variable means.\n\nIf you have many variables then only describe the most relevant ones and summarize the rest.\n\nDescribe any cleaning you had to do for your data.\n\nYou must include a link to your load_and_clean_data.R file.\nRrename variables and recode factors to make data more clear.\nAlso, describe any additional R packages you used outside of those covered in class.\nDescribe and show code for how you combined multiple data files and any cleaning that was necessary for that.\nSome repetition of what you do in your load_and_clean_data.R file is fine and encouraged if it helps explain what you did.\n\nOrganization, clarity, cleanliness of the page\n\nMake sure to remove excessive warnings, use clean easy-to-read code (without side scrolling), organize with sections, use bullets and other organization tools, etc.\nThis page should be self-contained.\n\n\n————————-keep_below——————————————–"
   },
   {
     "objectID": "data.html#cleaning",
@@ -278,33 +271,5 @@
     "title": "Data",
     "section": "Unemployment rate:",
     "text": "Unemployment rate:\nwe have include two kinds of unemployment rate, one is per month, the other one is per year by states.\n\n\n\nVariable\nDescription\n\n\n\n\nstate\nname of state\n\n\nX2020\nunemployment rate for 2020 in percentage\n\n\nX2021\nunemployment rate for 2021 in percentage\n\n\nX2022\nunemployment rate for 2022 in percentage\n\n\naverage\naverage of unemployment across these year\n\n\n\nhere access to our cleaned unemployment rate data\nwe also include another unemployment data\n\n\n\nVariable\nDescription\n\n\n\n\ndate\ndate the data is collected\n\n\nUNRATE\nunemployment rate in percentage\n\n\n\nhere access to our cleaned unemployment rate data with time"
-  },
-  {
-    "objectID": "analysis.html#introduction-to-data-analysis-on-the-impact-of-unemployment-on-mental-health-during-the-pandemic",
-    "href": "analysis.html#introduction-to-data-analysis-on-the-impact-of-unemployment-on-mental-health-during-the-pandemic",
-    "title": "Analysis",
-    "section": "Introduction to Data Analysis on the Impact of Unemployment on Mental Health during the Pandemic",
-    "text": "Introduction to Data Analysis on the Impact of Unemployment on Mental Health during the Pandemic\nThe COVID-19 pandemic has had a profound impact on global health and economic stability, touching all aspects of life, including mental well-being. Given the widespread changes and challenges, there has been a renewed focus on mental health, particularly as it relates to economic stresses like unemployment. This analysis aims to explore the complex relationship between unemployment and mental health during these challenging times."
-  },
-  {
-    "objectID": "analysis.html#variables-and-relationships-of-interest",
-    "href": "analysis.html#variables-and-relationships-of-interest",
-    "title": "Analysis",
-    "section": "Variables and Relationships of Interest",
-    "text": "Variables and Relationships of Interest\nThe primary variables of interest in this analysis are:\nUnemployment Rate: Measured monthly or annually, it reflects the percentage of the labor force that is jobless and actively seeking employment. Mental Health Metrics: This could include data on the prevalence of mental health conditions, rates of mental health service utilization, and frequencies of mental health-related symptoms reported by different demographics. Demographic Information: Including age and gender, which may influence how unemployment impacts mental health. The key relationship we are most interested in examining is the correlation between rising unemployment rates and changes in mental health status among different demographic groups."
-  },
-  {
-    "objectID": "analysis.html#research-questions",
-    "href": "analysis.html#research-questions",
-    "title": "Analysis",
-    "section": "Research Questions",
-    "text": "Research Questions\nThis analysis seeks to answer the following questions:\nHow has the unemployment rate influenced mental health conditions during the pandemic years? Are there significant differences in mental health across different age groups and genders? Has there been an increase in the use of mental health services correlating with changes in the unemployment rate?"
-  },
-  {
-    "objectID": "analysis.html#sex-and-gender",
-    "href": "analysis.html#sex-and-gender",
-    "title": "Analysis",
-    "section": "sex and gender",
-    "text": "sex and gender"
   }
 ]

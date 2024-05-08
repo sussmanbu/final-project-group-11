@@ -1,5 +1,5 @@
 ---
-title: "Big Picture"
+title: "Investigating Mental Health"
 description: "A 538/Upshot style article about the data."
 toc: true
 draft: FALSE
@@ -25,6 +25,151 @@ The x-value “Time Period” is a measure of 2-week phases, therefore 20 is 40 
 For all the following analyze, we are focus on the indicator "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks" 
 
 #### general summary
+
+```{r, echo=FALSE}
+library(ggplot2)
+library(readr)
+library(dplyr)
+
+# Read the data
+data <- readRDS("~/final-project-group-11/dataset/cleaned_dataset.rds")
+
+# Filter data for national estimates and focus only on relevant columns
+national_data <- data %>%
+  filter(Group == "National Estimate") %>%
+  select(Indicator,`Time Period`, `Time Period Label`, Value)
+
+# Generate a line plot
+p_us_t<-ggplot(national_data, aes(x = `Time Period`, y = Value, color = Indicator)) +
+  geom_line() +
+  theme(legend.position = "bottom",
+         legend.direction = "vertical")+
+  labs(title = "Trends of Indicators Over Time",
+       x = "Time Period",
+       y = "Average Value",
+       color = "Indicator") 
+
+
+
+data_state <- data %>%
+  filter(Group == "By State", 
+         Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") 
+
+data_state_avg <-data_state%>%
+  group_by(Subgroup) %>%
+  summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
+  ungroup()
+
+
+
+data_race <- data %>%
+  filter(Group == "By Race/Hispanic ethnicity", 
+         Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") 
+
+#gen along time line plot
+p_race_t<-ggplot(data_race, aes(x = `Time Period`, y = Value, color = Subgroup)) +
+  geom_line() +
+  theme(legend.position = "bottom",
+         legend.direction = "vertical")+
+  labs(title = "Trends of Race Over Time",
+       x = "Time Period",
+       y = "Average Value",
+       color = "Race") 
+
+data_race_avg <-data_race%>%
+  group_by(Subgroup) %>%
+  summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
+  ungroup()
+
+# Generate an averaged bar plot
+p_race_avg<-ggplot(data_race_avg, aes(x = Subgroup, y = Average_Value, fill = Subgroup)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  labs(title = "Average Value by Race",
+       x = "Race",
+       y = "Average Value") 
+
+
+
+
+
+#plot of edu
+# Filter and prepare data for the specific indicator and by education, averaging over time
+data_education <- data %>%
+  filter(Group == "By Education", 
+         Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") 
+#gen along time line plot
+p_edu_t<-ggplot(data_education, aes(x = `Time Period`, y = Value, color = Subgroup)) +
+  geom_line() +
+  theme(legend.position = "bottom",
+         legend.direction = "vertical")+
+  labs(title = "Trends of Education Over Time",
+       x = "Time Period",
+       y = "Average Value",
+       color = "Education Level") 
+
+data_edu_avg <-data_education%>%
+  group_by(Subgroup) %>%
+  summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
+  ungroup()
+
+# Generate an averaged bar plot
+p_edu_avg<-ggplot(data_edu_avg, aes(x = Subgroup, y = Average_Value, fill = Subgroup)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  labs(title = "Average Value by Education Level",
+       x = "Education Level",
+       y = "Average Value") 
+
+
+
+#by age
+# Filter data for the specific indicator and by age
+data_age_summary <- data %>%
+  filter(Group == "By Age", 
+         Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") %>%
+  group_by(Subgroup) %>%
+  summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
+  ungroup()
+
+# Generate a line plot
+p_age_avg<-ggplot(data_age_summary, aes(x = Subgroup, y = Average_Value, group = 1)) +
+  geom_line() +
+  geom_point() +  # Add points to the line plot for clarity
+  labs(title = "Average Value by Age Group",
+       x = "Age Group",
+       y = "Average Value") 
+
+#sex plot
+# Filter and prepare data for the specific indicator and by education, averaging over time
+data_sex <- data %>%
+  filter(Group == "By Sex", 
+         Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") 
+#gen along time line plot
+p_sex_t<-ggplot(data_sex, aes(x = `Time Period`, y = Value, color = Subgroup)) +
+  geom_line() +
+  theme(legend.position = "bottom",
+         legend.direction = "vertical")+
+  labs(title = "Trends of sex Over Time",
+       x = "Time Period",
+       y = "Average Value",
+       color = "sex") 
+
+data_sex_avg <-data_sex%>%
+  group_by(Subgroup) %>%
+  summarize(Average_Value = mean(Value, na.rm = TRUE)) %>%
+  ungroup()
+
+# Generate an averaged bar plot
+p_sex_avg<-ggplot(data_sex_avg, aes(x = Subgroup, y = Average_Value, fill = Subgroup)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  labs(title = "Average Value by sex",
+       x = "sex",
+       y = "Average Value") 
+
+```
+
+
+
+
 ```{r,echo=FALSE}
 
 library(dplyr)
@@ -223,59 +368,3 @@ The unemployment rate by state vs the value also shows a trend that the lower un
 
 Please refer to the data analysis page for our overall findings. 
 
-This comes from the file `big_picture.Rmd`.
-
-Think of this page as your 538/Upshot style article. This means that you should try to tell a story through the data and your analysis. Read articles from those sites and similar sites to get a feeling for what they are like. Try to write in the style of a news or popular article. Importantly, this pge should be geared towards the general public. You shouldn't assume the reader understands how to interpret a linear regression. Focus on interpretation and visualizations.
-
----
-
-## Rubric: On this page
-
-You will
-
-* Title
-  * Your big picture page should have a creative/click-bait-y title/headline that provides a hint about your thesis.
-* Clarity of Explanation
-  * You should have a clear thesis/goal for this page. What are you trying to show? Make sure that you explain your analysis in detail but don't go into top much mathematics or statistics. The audience for this page is the general public (to the extent possible). Your thesis should be a statement, not a question.
-  * Each figure should be very polished and also not too complicated. There should be a clear interpretation of the figure so the figure has a clear purpose. Even something like a histogram can be difficult to interpret for non-experts.
-* Creativity
-  * Do your best to make things interesting. Think of a story. Think of how each part of your analysis supports the previous part or provides a different perspective.
-* This page should be self-contained.
-  
-**Note**: This page should have no code visible, i.e. use `#| echo: FALSE`.  
-
----
-
-## Rubric: Other components
-
-### Interactive
-
-You will also be required to make an interactive dashboard like [this one](/flex/flex.html).
-
-Your Big Data page should include a link to an interactive dashboard. The dashboard should be created either using Shiny or FlexDashboard (or another tool with professor's approval). This interactive component should in some way support your thesis from your big picture page. Good interactives often provide both high-level understanding of the data while allowing a user to investigate specific scenarios, observations, subgroups, etc.
-
-* Quality and ease of use of the interactive components.
-Is it clear what can be explored using your interactive components?
-Does it enhance and reinforce your conclusions from the Big Picture?
-Plotly with default hover text will get no credit. Be creative!
-
-
-### Video Recording
-
-Make a video recording (probably using Zoom) demonstrating your interactive components.
-You should provide a quick explanation of your data and demonstrate some of the conclusions from your EDA.
-This video should be no longer than 4 minutes.
-Include a link to your video (and password if needed) in your README.md file on your Github repository. You are not required to provide a link on the website.
-This can be presented by any subset of the team members.
-
-
-### Rest of the Site
-
-Finally, here are important things to keep in mind for the rest of the site. 
-
-The main title of your page is informative.
-Each post has an author/description/informative title.
-All lab required posts are present.
-Each page (including the home page) has a nice featured image associated with it.
-Your about page is up to date and clean.
-You have removed the generic posts from the initial site template.

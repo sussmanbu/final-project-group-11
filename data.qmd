@@ -237,7 +237,7 @@ data_age_summary <- data %>%
 
 p_age_avg<-ggplot(data_age_summary, aes(x = Subgroup, y = Average_Value, group = 1)) +
   geom_line() +
-  geom_point() +  # Add points to the line plot for clarity
+  geom_point() +  
   labs(title = "Average Value by Age Group",
        x = "Age Group",
        y = "Average Value") 

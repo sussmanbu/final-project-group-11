@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -18,10 +18,9 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -48,13 +47,43 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
+    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -90,8 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -110,31 +138,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <span class="navbar-title">MA [46]15 Final Project Group 11</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="./about.html">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./big_picture.html" rel="" target="">
+    <a class="nav-link" href="./big_picture.html">
  <span class="menu-text">Big Picture</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./analysis.html" rel="" target="">
+    <a class="nav-link" href="./analysis.html">
  <span class="menu-text">Analysis</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./data.html" rel="" target="" aria-current="page">
+    <a class="nav-link active" href="./data.html" aria-current="page">
  <span class="menu-text">Data</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
+              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -155,6 +181,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#load-and-clean-data-script" id="toc-load-and-clean-data-script" class="nav-link" data-scroll-target="#load-and-clean-data-script">Load and clean data script</a></li>
   </ul></li>
   <li><a href="#rubric-on-this-page" id="toc-rubric-on-this-page" class="nav-link" data-scroll-target="#rubric-on-this-page">Rubric: On this page</a></li>
+  <li><a href="#describe-wherehow-to-find-data" id="toc-describe-wherehow-to-find-data" class="nav-link" data-scroll-target="#describe-wherehow-to-find-data">Describe where/how to find data:</a>
+  <ul class="collapse">
+  <li><a href="#mental-health" id="toc-mental-health" class="nav-link" data-scroll-target="#mental-health">Mental Health:</a></li>
+  <li><a href="#unemployment-rate" id="toc-unemployment-rate" class="nav-link" data-scroll-target="#unemployment-rate">Unemployment Rate：</a></li>
+  </ul></li>
+  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets">Datasets</a>
+  <ul class="collapse">
+  <li><a href="#cleaning" id="toc-cleaning" class="nav-link" data-scroll-target="#cleaning">Cleaning:</a></li>
+  <li><a href="#extra-r-package" id="toc-extra-r-package" class="nav-link" data-scroll-target="#extra-r-package">Extra R package:</a></li>
+  <li><a href="#mental-health-1" id="toc-mental-health-1" class="nav-link" data-scroll-target="#mental-health-1">Mental Health:</a></li>
+  <li><a href="#unemployment-rate-1" id="toc-unemployment-rate-1" class="nav-link" data-scroll-target="#unemployment-rate-1">Unemployment rate:</a></li>
+  </ul></li>
+  <li><a href="#summeralize-of-the-data" id="toc-summeralize-of-the-data" class="nav-link" data-scroll-target="#summeralize-of-the-data">Summeralize of the data:</a>
+  <ul class="collapse">
+  <li><a href="#overall-values-across-time" id="toc-overall-values-across-time" class="nav-link" data-scroll-target="#overall-values-across-time">overall values across time:</a></li>
+  <li><a href="#detailed-data-summary" id="toc-detailed-data-summary" class="nav-link" data-scroll-target="#detailed-data-summary">detailed data summary</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -219,8 +262,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ dplyr     1.1.4     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
 ✔ ggplot2   3.4.4     ✔ tibble    3.2.1
 ✔ lubridate 1.9.3     ✔ tidyr     1.3.0
 ✔ purrr     1.0.2     
@@ -268,8 +311,8 @@ dbl (4): min, white, himin, hiwhite
 <ul>
 <li>Describe where/how to find data.
 <ul>
-<li>You must include a link to the original data source(s). Make sure to provide attribution to those who collected the data.</li>
-<li>Why was the data collected/curated? Who put it together? (This is important, if you don’t know why it was collected then that might not be a good dataset to look at.</li>
+<li><p>You must include a link to the original data source(s). Make sure to provide attribution to those who collected the data.</p></li>
+<li><p>Why was the data collected/curated? Who put it together? (This is important, if you don’t know why it was collected then that might not be a good dataset to look at.</p></li>
 </ul></li>
 <li>Describe the different data files used and what each variable means.
 <ul>
@@ -289,8 +332,390 @@ dbl (4): min, white, himin, hiwhite
 <li>This page should be self-contained.</li>
 </ul></li>
 </ul>
+<p>————————-keep_below——————————————–</p>
+</section>
+<section id="describe-wherehow-to-find-data" class="level1">
+<h1>Describe where/how to find data:</h1>
+<section id="mental-health" class="level3">
+<h3 class="anchored" data-anchor-id="mental-health">Mental Health:</h3>
+<p>The dataset “Mental Health Care in the Last 4 Weeks” is available on Data.gov and provides valuable insights into the impact of COVID-19 on mental health. This initiative is part of a collaboration between the National Center for Health Statistics (NCHS) and the Census Bureau, using an experimental data system known as the Household Pulse Survey. Here’s a comprehensive overview incorporating the details of the dataset’s development and its findings:</p>
+<p><strong>Background of the Data:</strong></p>
+<p>The “Mental Health Care in the Last 4 Weeks” dataset provides crucial insights into how COVID-19 has impacted American households socially and economically. Developed by the NCHS in collaboration with the Census Bureau, it initially formed part of the Household Pulse Survey which began on April 23, 2020. The survey aimed to quickly monitor recent changes in various aspects of daily life, including mental health due to the pandemic.</p>
+<p>This dataset specifically tracks changes in mental health care by showing the percentage of adults aged 18 and over who, in the past four weeks, have taken prescription medication for mental health, received counseling or therapy from a mental health professional, or had an unmet need for mental health services because they did not receive the counseling or therapy they needed.</p>
+<p><strong>How to Find the Data:</strong></p>
+<ol type="1">
+<li>Go to <a href="https://www.data.gov/">Data.gov</a>.</li>
+<li>Type “Mental Health Care in the Last 4 Weeks” into the search bar.</li>
+<li>Click the appropriate dataset link from the search results to access its description, metadata, and download options.</li>
+<li>Or, click directly on this link: <a href="https://catalog.data.gov/dataset/mental-health-care-in-the-last-4-weeks">Mental Health Care in the Last 4 Weeks</a>.</li>
+</ol>
+<p><strong>Source and Attribution:</strong></p>
+<ul>
+<li><strong>Collected By:</strong> The dataset is a joint effort between the National Center for Health Statistics (NCHS) and the Census Bureau. It was part of the experimental Household Pulse Survey designed to rapidly respond to the evolving national health landscape under the strain of the coronavirus pandemic. This collaborative approach enhances the dataset’s relevance and utility in understanding the pandemic’s impact.</li>
+</ul>
+<p><strong>Purpose and Context:</strong></p>
+<p>This dataset provides timely information on the use of mental health services during a critical period. It supports a variety of research objectives, such as comparing current mental health statistics with previous years’ benchmarks, understanding ongoing trends, and planning resource allocation for mental health services. Historical data from the National Health Interview Survey (NHIS) of 2019 offers a useful comparison, highlighting trends over a longer period and under different circumstances.</p>
+<p><strong>Data Equity:</strong></p>
+<p>Ensuring equity in data analysis is vital, especially to address the diverse impacts of COVID-19 on different demographic groups. The dataset includes detailed breakdowns by age, ethnicity, and other factors to help identify and address disparities in mental health care access and utilization during the pandemic.</p>
+<p>This comprehensive approach in data gathering and analysis is aimed at providing insights that can help guide public health strategies and interventions to better manage the nation’s mental health in the wake of the pandemic.</p>
+</section>
+<section id="unemployment-rate" class="level3">
+<h3 class="anchored" data-anchor-id="unemployment-rate">Unemployment Rate：</h3>
+<p>The dataset “U.S. Unemployment Rate Over the Last Four Years” provides a detailed view of the unemployment trends and changes in the American labor market. It reflects the economic challenges and recoveries during this period, particularly influenced by events such as the COVID-19 pandemic.</p>
+<p><strong>Background of the Data:</strong></p>
+<p>This dataset is collected by the Bureau of Labor Statistics (BLS), which conducts monthly surveys to gauge the unemployment rate across different demographics and sectors. The unemployment rate is a key indicator of economic health, showing the percentage of the labor force that is jobless but actively seeking employment.</p>
+<p><strong>Recent Trends:</strong></p>
+<ul>
+<li>In 2020, the unemployment rate reached an unprecedented peak due to the COVID-19 pandemic, reflecting widespread job losses during the initial lockdowns.</li>
+<li>Following 2020, the unemployment rate began to decrease as economic activities resumed and vaccination rates increased, leading to gradual recovery in various sectors.</li>
+<li>By early 2024, the unemployment rate had stabilized, showing signs of a resilient economy adapting to post-pandemic conditions.</li>
+</ul>
+<p><strong>How to Find the Data:</strong></p>
+<ol type="1">
+<li>Visit the <a href="https://www.bls.gov/">Bureau of Labor Statistics website</a>.</li>
+<li>Navigate to the “Data Tools” section and select “Top Picks” to quickly access the most frequently sought data, including unemployment rates.</li>
+<li>You can also use the “Databases and Tools” section to access more customized data searches, including historical unemployment rates.</li>
+</ol>
+<p><strong>Source and Attribution:</strong></p>
+<ul>
+<li><strong>Collected By:</strong> The data is collected by the U.S. Bureau of Labor Statistics (BLS), part of the U.S. Department of Labor, which is the principal Federal agency responsible for measuring labor market activity, working conditions, and price changes in the economy.</li>
+</ul>
+<p><strong>Purpose and Context:</strong></p>
+<p>The primary purpose of collecting unemployment data is to provide a clear picture of the labor market’s health and help policymakers, researchers, and the public understand current economic conditions. This data is crucial for making informed decisions regarding employment policies, economic assistance programs, and job training initiatives.</p>
+<p><strong>Data Equity:</strong></p>
+<p>The BLS ensures that the data is representative of the entire population by including diverse groups in its surveys, spanning different industries, age groups, races, and genders. This comprehensive approach allows for targeted interventions that address unemployment disparities among different demographic groups.</p>
+<p>By analyzing this data, stakeholders can better understand the dynamics of the labor market and develop strategies to promote economic stability and growth.</p>
+</section>
+</section>
+<section id="datasets" class="level1">
+<h1>Datasets</h1>
+<section id="cleaning" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning">Cleaning:</h2>
+<p>you can <a href="./dataset/load_and_clean.R">access our Load and Clean Script here</a> for the mental health data, we essentially got rid of the last 3 columns, and we got rid of any non-value cells. The columns we got rid of were ‘Confidence Interval’, ‘Quartile Range’ and ‘Suppression Flag’. We got rid of ‘Confidence Interval’ because you can calculate that using the previous two columns: LowCI and HighCI. We got rid of ‘Quartile Range’ because there were empty cells, i.e., not available for all of our data points. For the unemployment rate data, we keep only the rate for 2020,2021, and 2022, which is our mental health data cover, and calculate the average of them, then connect it with the average of values for different states, under indicator: Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks.</p>
+</section>
+<section id="extra-r-package" class="level2">
+<h2 class="anchored" data-anchor-id="extra-r-package">Extra R package:</h2>
+<p>we are using the R package <a href="https://cran.r-project.org/web/packages/gridExtra/index.html">“gridExtra”</a> to help us arrange the graph in the data page. <a href="https://cran.r-project.org/web/packages/knitr/index.html">“knitr”</a> to help generate table</p>
+</section>
+<section id="mental-health-1" class="level2">
+<h2 class="anchored" data-anchor-id="mental-health-1">Mental Health:</h2>
+<table class="table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 82%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>indicator</td>
+<td>The indicator of the treatment the subject received. There were four: 1. Took prescription medication for mental health. 2. Received counseling or therapy. 3. Took prescription medication and/or received counseling or therapy. 4. Needed counseling or therapy but did not get it</td>
+</tr>
+<tr class="even">
+<td>Group:</td>
+<td>the grouping method</td>
+</tr>
+<tr class="odd">
+<td>State:</td>
+<td>name of state, United State if all state are include</td>
+</tr>
+<tr class="even">
+<td>Subgroup</td>
+<td>Each data point was also subgrouped by other demographic factors such as age, sex, race, education, state</td>
+</tr>
+<tr class="odd">
+<td>value</td>
+<td>people who received treatment or not, indicate mental health, higher is worse</td>
+</tr>
+</tbody>
+</table>
+<p>for subgroups:</p>
+<table class="table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 82%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>subgroup</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>sex</td>
+<td>Male or Female</td>
+</tr>
+<tr class="even">
+<td>age</td>
+<td>The age ranged from 18-79 years old and were group in 10’s</td>
+</tr>
+<tr class="odd">
+<td>race</td>
+<td>There were five race categories. 1. Hispanic or Latino. 2. Non-Hispanic White. 3. Non-Hispanic Black. 4. Non-Hispanic Asian. 5. Non-Hispanic Other or Multiple races</td>
+</tr>
+<tr class="even">
+<td>education</td>
+<td>There were four race categories. 1. Less than a high-school diploma. 2. High school diploma or GED. 3. Some college/Associate’s degree. 4. Bachelor degree’s or higher</td>
+</tr>
+</tbody>
+</table>
+<p>here is the cleaned dataset of our <a href="./dataset/cleaned_dataset.rds">mental health data</a></p>
+</section>
+<section id="unemployment-rate-1" class="level2">
+<h2 class="anchored" data-anchor-id="unemployment-rate-1">Unemployment rate:</h2>
+<p>we have include two kinds of unemployment rate, one is per month, the other one is per year by states.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>state</td>
+<td>name of state</td>
+</tr>
+<tr class="even">
+<td>X2020</td>
+<td>unemployment rate for 2020 in percentage</td>
+</tr>
+<tr class="odd">
+<td>X2021</td>
+<td>unemployment rate for 2021 in percentage</td>
+</tr>
+<tr class="even">
+<td>X2022</td>
+<td>unemployment rate for 2022 in percentage</td>
+</tr>
+<tr class="odd">
+<td>average</td>
+<td>average of unemployment across these year</td>
+</tr>
+</tbody>
+</table>
+<p><a href="./dataset/clean_unemployment.rds">here access to our cleaned unemployment rate data</a></p>
+<p>we also include another unemployment data</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>date</td>
+<td>date the data is collected</td>
+</tr>
+<tr class="even">
+<td>UNRATE</td>
+<td>unemployment rate in percentage</td>
+</tr>
+</tbody>
+</table>
+<p><a href="./dataset/UNRATE.csv">here access to our cleaned unemployment rate data with time</a></p>
+</section>
+</section>
+<section id="summeralize-of-the-data" class="level1">
+<h1>Summeralize of the data:</h1>
+<div class="cell">
+
+</div>
+<section id="overall-values-across-time" class="level3">
+<h3 class="anchored" data-anchor-id="overall-values-across-time">overall values across time:</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="data_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The x-value “Time Period” is a measure of 2-week phases, therefore 20 is 40 weeks from when they first started collecting data. The time period spans across an overall 90 week period. Thus, the first data obtain is on Aug 31, 2020, time period 30is May 24, 2021, and the time data is on May 9, 2022. We can see for all indicator, the average value of the mental problem is increase along the time.</p>
+</section>
+<section id="detailed-data-summary" class="level3">
+<h3 class="anchored" data-anchor-id="detailed-data-summary">detailed data summary</h3>
+<p>For all the following analyze, we are focus on the indicator “Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks”</p>
+<section id="general-summary" class="level4">
+<h4 class="anchored" data-anchor-id="general-summary">general summary</h4>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Adding missing grouping variables: `Subgroup`</code></pre>
+</div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 67%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: right;">Min</th>
+<th style="text-align: right;">Max</th>
+<th style="text-align: right;">Mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Hispanic or Latino along time</td>
+<td style="text-align: right;">17.20000</td>
+<td style="text-align: right;">23.20000</td>
+<td style="text-align: right;">19.58182</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Non-Hispanic Asian, single race along time</td>
+<td style="text-align: right;">10.30000</td>
+<td style="text-align: right;">15.90000</td>
+<td style="text-align: right;">12.66970</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Non-Hispanic Black, single race along time</td>
+<td style="text-align: right;">15.60000</td>
+<td style="text-align: right;">21.50000</td>
+<td style="text-align: right;">19.34545</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Non-Hispanic White, single race along time</td>
+<td style="text-align: right;">25.10000</td>
+<td style="text-align: right;">30.20000</td>
+<td style="text-align: right;">27.75152</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Non-Hispanic, other races and multiple races along time</td>
+<td style="text-align: right;">23.70000</td>
+<td style="text-align: right;">32.90000</td>
+<td style="text-align: right;">28.60909</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Female along time</td>
+<td style="text-align: right;">27.50000</td>
+<td style="text-align: right;">33.80000</td>
+<td style="text-align: right;">30.69091</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Male along time</td>
+<td style="text-align: right;">16.30000</td>
+<td style="text-align: right;">20.20000</td>
+<td style="text-align: right;">18.49394</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bachelor’s degree or higher along time</td>
+<td style="text-align: right;">23.80000</td>
+<td style="text-align: right;">28.40000</td>
+<td style="text-align: right;">26.06970</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">High school diploma or GED along time</td>
+<td style="text-align: right;">19.40000</td>
+<td style="text-align: right;">25.10000</td>
+<td style="text-align: right;">21.92727</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Less than a high school diploma along time</td>
+<td style="text-align: right;">15.80000</td>
+<td style="text-align: right;">25.40000</td>
+<td style="text-align: right;">21.20606</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Some college/Associate’s degree along time</td>
+<td style="text-align: right;">23.50000</td>
+<td style="text-align: right;">30.00000</td>
+<td style="text-align: right;">27.15455</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">age</td>
+<td style="text-align: right;">16.46667</td>
+<td style="text-align: right;">27.18182</td>
+<td style="text-align: right;">23.65541</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">state</td>
+<td style="text-align: right;">16.93030</td>
+<td style="text-align: right;">30.74242</td>
+<td style="text-align: right;">25.95799</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="race" class="level4">
+<h4 class="anchored" data-anchor-id="race">race</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="data_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="data_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>There is a difference in the average mental health scores between the races. From this graph, one case see that the race with the lowest mental health scores (engagement with mental health interventions), is Asian. It is then followed by Black, then Hispanic or Latino. And the races with the highest mental health scores are White and other race or multiple races. If you look at these values across time the order of these races in terms of mental health scores stay the same, but there are large variations among the Asian participants and the other races or multiple races. These two groups, as well as White participants, seem to have an increase in their mental health scores across time.</p>
+</section>
+<section id="sex" class="level4">
+<h4 class="anchored" data-anchor-id="sex">sex</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="data_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="data_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>There is a difference in the average mental health values between males and females. Across, time this difference remains equally prominent with females overall having higher mental health scores than males. This suggests that more females than males used mental health services. However, much like the other variables, there was a slight increase across time</p>
+</section>
+<section id="education-level" class="level4">
+<h4 class="anchored" data-anchor-id="education-level">education level</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="data_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="data_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>It appears that there is some variation in use of mental health interventions across education levels. It appears people with greater education levels seem to have poorer mental health, however this could be correlated with age or other more significant factors. Interestingly, there seems to be great variation in the correlation between education levels and mental health across the 90-week period, as indicated by the second graph. But, in general, the percentage of people who require mental health intervention increases over time.</p>
+</section>
+<section id="age" class="level4">
+<h4 class="anchored" data-anchor-id="age">age</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="data_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>As one can see, there is a clear negative correlation between the percentage of people who required mental health intervention and age group, indicating as age increased the need for mental health resources (and the impact of mental health) decreased. One could say perhaps the younger population was more impacted by the social isolation that the COVID-19 posed.</p>
+</section>
+<section id="unemployment-rate-2" class="level4">
+<h4 class="anchored" data-anchor-id="unemployment-rate-2">unemployment rate:</h4>
+<p>by time across the USA:</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 rows containing missing values (`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="data_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The unemployment rate by time vs the value shows a clear trend that when the unemployment rate is high, the mental health of whole country seems to be better.</p>
+<p>By state, average of all time:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="data_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="data_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The unemployment rate by state vs the value also shows a trend that the lower unemployment rate in fact increase the mental health problem. The bar chart is divided by the median of the unemployment rate(5.5%), it also shows that the higher unemployment rate usually indicate a better mental health</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -321,23 +746,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -402,92 +813,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

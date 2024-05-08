@@ -111,7 +111,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#rubric-on-this-page" id="toc-rubric-on-this-page" class="nav-link active" data-scroll-target="#rubric-on-this-page">Rubric: On this page</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#thesis" id="toc-thesis" class="nav-link" data-scroll-target="#thesis">Thesis:</a></li>
+  <li><a href="#data-and-methodology" id="toc-data-and-methodology" class="nav-link" data-scroll-target="#data-and-methodology">Data and Methodology</a>
+  <ul class="collapse">
+  <li><a href="#detailed-data-summary" id="toc-detailed-data-summary" class="nav-link" data-scroll-target="#detailed-data-summary">detailed data summary</a></li>
+  </ul></li>
+  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">DATA ANALYSIS</a></li>
+  <li><a href="#rubric-on-this-page" id="toc-rubric-on-this-page" class="nav-link" data-scroll-target="#rubric-on-this-page">Rubric: On this page</a></li>
   <li><a href="#rubric-other-components" id="toc-rubric-other-components" class="nav-link" data-scroll-target="#rubric-other-components">Rubric: Other components</a>
   <ul class="collapse">
   <li><a href="#interactive" id="toc-interactive" class="nav-link" data-scroll-target="#interactive">Interactive</a></li>
@@ -146,10 +153,230 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><img src="images/The_Big_Picture_2.jpeg" class="img-fluid"></p>
+<p><img src="images/Covid.jpg" class="img-fluid"> ## Investigating Mental Health as a Virtue of the Pandemic and Other Demographic Factors</p>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
+<p>The pandemic placed many burdens on our society. People were socially isolated, and financially burdened, due to unemployment as well as reduced overall income. We also know that these disproportionately affected people due to their demographic factors, i.e., the state that they live in or the race that they are. All of these factors collectively therefore had an impact on people’s mental health. This study therefore set out to investigate the impact of the pandemic on the</p>
+</section>
+<section id="thesis" class="level2">
+<h2 class="anchored" data-anchor-id="thesis">Thesis:</h2>
+<p>We believe that as unemployment increases, and income decreases, due to the pandemic, mental health scores for anxiety and depression will increase, and so will seeking mental health resources. This is why we compare the data from 2020 to 2022 to see if these got better in a post-lockdown world.</p>
+</section>
+<section id="data-and-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-methodology">Data and Methodology</h2>
+<p>We have brought together data from the CDC, regarding mental health, and data on unemployment, education levels and GDP from the U.S. Bureau of Labor Statistics. By analyzing these variables, we hope to be able to understand variables that impacted people’s mental health during the COVID-19 pandemic. Below, we have graphed each demographic variable with the average percent of people who required mental health intervention (as indicated by the variable “Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks”).</p>
+<p>The x-value “Time Period” is a measure of 2-week phases, therefore 20 is 40 weeks from when they first started collecting data. The time period spans across an overall 90 week period. Thus, the first data obtain is on Aug 31, 2020, time period 30 is May 24, 2021, and the time data is on May 9, 2022. We can see for all indicator, the average value of the mental problem is increase along the time.</p>
+<section id="detailed-data-summary" class="level3">
+<h3 class="anchored" data-anchor-id="detailed-data-summary">detailed data summary</h3>
+<p>For all the following analyze, we are focus on the indicator “Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks”</p>
+<section id="general-summary" class="level4">
+<h4 class="anchored" data-anchor-id="general-summary">general summary</h4>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Adding missing grouping variables: `Subgroup`</code></pre>
+</div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 67%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: right;">Min</th>
+<th style="text-align: right;">Max</th>
+<th style="text-align: right;">Mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Hispanic or Latino along time</td>
+<td style="text-align: right;">17.20000</td>
+<td style="text-align: right;">23.20000</td>
+<td style="text-align: right;">19.58182</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Non-Hispanic Asian, single race along time</td>
+<td style="text-align: right;">10.30000</td>
+<td style="text-align: right;">15.90000</td>
+<td style="text-align: right;">12.66970</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Non-Hispanic Black, single race along time</td>
+<td style="text-align: right;">15.60000</td>
+<td style="text-align: right;">21.50000</td>
+<td style="text-align: right;">19.34545</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Non-Hispanic White, single race along time</td>
+<td style="text-align: right;">25.10000</td>
+<td style="text-align: right;">30.20000</td>
+<td style="text-align: right;">27.75152</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Non-Hispanic, other races and multiple races along time</td>
+<td style="text-align: right;">23.70000</td>
+<td style="text-align: right;">32.90000</td>
+<td style="text-align: right;">28.60909</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Female along time</td>
+<td style="text-align: right;">27.50000</td>
+<td style="text-align: right;">33.80000</td>
+<td style="text-align: right;">30.69091</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Male along time</td>
+<td style="text-align: right;">16.30000</td>
+<td style="text-align: right;">20.20000</td>
+<td style="text-align: right;">18.49394</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bachelor’s degree or higher along time</td>
+<td style="text-align: right;">23.80000</td>
+<td style="text-align: right;">28.40000</td>
+<td style="text-align: right;">26.06970</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">High school diploma or GED along time</td>
+<td style="text-align: right;">19.40000</td>
+<td style="text-align: right;">25.10000</td>
+<td style="text-align: right;">21.92727</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Less than a high school diploma along time</td>
+<td style="text-align: right;">15.80000</td>
+<td style="text-align: right;">25.40000</td>
+<td style="text-align: right;">21.20606</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Some college/Associate’s degree along time</td>
+<td style="text-align: right;">23.50000</td>
+<td style="text-align: right;">30.00000</td>
+<td style="text-align: right;">27.15455</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">age</td>
+<td style="text-align: right;">16.46667</td>
+<td style="text-align: right;">27.18182</td>
+<td style="text-align: right;">23.65541</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">state</td>
+<td style="text-align: right;">16.93030</td>
+<td style="text-align: right;">30.74242</td>
+<td style="text-align: right;">25.95799</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="race" class="level4">
+<h4 class="anchored" data-anchor-id="race">race</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="big_picture_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="big_picture_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>There is a difference in the average mental health scores between the races. From this graph, one case see that the race with the lowest mental health scores (engagement with mental health interventions), is Asian. It is then followed by Black, then Hispanic or Latino. And the races with the highest mental health scores are White and other race or multiple races. If you look at these values across time the order of these races in terms of mental health scores stay the same, but there are large variations among the Asian participants and the other races or multiple races. These two groups, as well as White participants, seem to have an increase in their mental health scores across time.</p>
+</section>
+<section id="sex" class="level4">
+<h4 class="anchored" data-anchor-id="sex">sex</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="big_picture_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="big_picture_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>There is a difference in the average mental health values between males and females. Across, time this difference remains equally prominent with females overall having higher mental health scores than males. This suggests that more females than males used mental health services. However, much like the other variables, there was a slight increase across time</p>
+</section>
+<section id="education-level" class="level4">
+<h4 class="anchored" data-anchor-id="education-level">education level</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="big_picture_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="big_picture_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>It appears that there is some variation in use of mental health interventions across education levels. It appears people with greater education levels seem to have poorer mental health, however this could be correlated with age or other more significant factors. Interestingly, there seems to be great variation in the correlation between education levels and mental health across the 90-week period, as indicated by the second graph. But, in general, the percentage of people who require mental health intervention increases over time.</p>
+</section>
+<section id="age" class="level4">
+<h4 class="anchored" data-anchor-id="age">age</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="big_picture_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>As one can see, there is a clear negative correlation between the percentage of people who required mental health intervention and age group, indicating as age increased the need for mental health resources (and the impact of mental health) decreased. One could say perhaps the younger population was more impacted by the social isolation that the COVID-19 posed.</p>
+</section>
+<section id="unemployment-rate" class="level4">
+<h4 class="anchored" data-anchor-id="unemployment-rate">unemployment rate:</h4>
+<p>by time across the USA:</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'lubridate'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 rows containing missing values (`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="big_picture_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The unemployment rate by time vs the value shows a clear trend that when the unemployment rate is high, the mental health of whole country seems to be better.</p>
+<p>By state, average of all time:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="big_picture_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="big_picture_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The unemployment rate by state vs the value also shows a trend that the lower unemployment rate in fact increase the mental health problem. The bar chart is divided by the median of the unemployment rate (5.5%), it also shows that the higher unemployment rate usually indicate a better mental health</p>
+</section>
+</section>
+</section>
+<section id="data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="data-analysis">DATA ANALYSIS</h2>
+<p>Please refer to the data analysis page for our overall findings.</p>
 <p>This comes from the file <code>big_picture.Rmd</code>.</p>
 <p>Think of this page as your 538/Upshot style article. This means that you should try to tell a story through the data and your analysis. Read articles from those sites and similar sites to get a feeling for what they are like. Try to write in the style of a news or popular article. Importantly, this pge should be geared towards the general public. You shouldn’t assume the reader understands how to interpret a linear regression. Focus on interpretation and visualizations.</p>
 <hr>
+</section>
 <section id="rubric-on-this-page" class="level2">
 <h2 class="anchored" data-anchor-id="rubric-on-this-page">Rubric: On this page</h2>
 <p>You will</p>

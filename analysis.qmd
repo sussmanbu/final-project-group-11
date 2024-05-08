@@ -70,3 +70,193 @@ You will
 -   Organization and cleanliness.
     -   Make sure to remove excessive warnings, hide most or all code, organize with sections or multiple pages, use bullets, etc.
     -   This page should be self-contained, i.e. provide a description of the relevant data.
+
+
+----------------------------------keep----------------------------------------------
+# motivates:
+
+## Introduction to Data Analysis on the Impact of Unemployment on Mental Health during the Pandemic
+
+The COVID-19 pandemic has had a profound impact on global health and economic stability, touching all aspects of life, including mental well-being. Given the widespread changes and challenges, there has been a renewed focus on mental health, particularly as it relates to economic stresses like unemployment. This analysis aims to explore the complex relationship between unemployment and mental health during these challenging times.
+
+## Variables and Relationships of Interest
+
+The primary variables of interest in this analysis are:
+
+Unemployment Rate: Measured monthly or annually, it reflects the percentage of the labor force that is jobless and actively seeking employment.
+Mental Health Metrics: This could include data on the prevalence of mental health conditions, rates of mental health service utilization, and frequencies of mental health-related symptoms reported by different demographics.
+Demographic Information: Including age and gender, which may influence how unemployment impacts mental health.
+The key relationship we are most interested in examining is the correlation between rising unemployment rates and changes in mental health status among different demographic groups.
+
+## Research Questions
+
+This analysis seeks to answer the following questions:
+
+How has the unemployment rate influenced mental health conditions during the pandemic years?
+Are there significant differences in mental health across different age groups and genders?
+Has there been an increase in the use of mental health services correlating with changes in the unemployment rate?
+
+# model
+
+```{r,echo=FALSE}
+library(dplyr)
+library(ggplot2)
+library(broom)
+library(knitr)
+
+# Read the datasets
+data <- readRDS("dataset/cleaned_dataset.rds")
+unemployment_data <- readRDS("dataset/clean_unemployment.rds")
+
+# Prepare the unemployment data
+unemployment_data_state <- unemployment_data %>%
+  rename(State = state) %>%
+  group_by(State) %>%
+  summarize(Average_Unemployment = mean(Average, na.rm = TRUE), .groups = "drop")
+
+# Calculate the U.S. national average unemployment rate from the state averages
+us_unemployment <- mean(unemployment_data_state$Average_Unemployment, na.rm = TRUE)
+
+# Replace NA values in Average_Unemployment with the U.S. national average
+unemployment_data_state <- unemployment_data_state %>%
+  mutate(Average_Unemployment = ifelse(is.na(Average_Unemployment), us_unemployment, Average_Unemployment))
+
+# Continue with filtering the main dataset for the specific indicator and state-level data
+filtered_data <- data %>%
+  filter(Group == "By State", 
+         Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") %>%
+  group_by(State) %>%
+  summarize(Average_Value = mean(Value, na.rm = TRUE), .groups = "drop")
+
+# Merge the datasets
+combined_data <- left_join(filtered_data, unemployment_data_state, by = "State")
+
+# Optional: Proceed with regression analysis or further data manipulation
+# Example of regression:
+model <- lm(Average_Value ~ Average_Unemployment, data = combined_data)
+
+# Optionally, plot the data and the fitted model line
+ggplot(combined_data, aes(x = Average_Unemployment, y = Average_Value)) +
+  geom_point() +
+  geom_smooth(method = "lm", col = "blue") +
+  labs(title = "Linear Model Fit of Unemployment Rate vs. Mental Health Indicator Value",
+       x = "Average Unemployment Rate (%)",
+       y = "Average Value of Mental Health Indicator") +
+  theme_minimal()
+
+
+tidied_model <- tidy(model)
+glance_stats <- glance(model)
+residuals_summary <- summary(model)$residuals
+
+
+```
+
+|Coefficients|estimate|std.error|t value|Pr(>|t|)|
+|------------|-------|----------|-------|-----------------------------|
+|intercept|31.1540|1.5574|20.004| < 2e-16 ***|
+|Average_Unemployment|-1.0002|0.2921|-3.424 | 0.00126 ** |
+$Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1$
+
+|stat|value|
+|--|---|
+|Multiple R-squared|0.1931|
+|Adjusted R-squared|0.1766|
+|F-statistic|11.72|
+|p-value |0.001256|
+
+|Residuals|value|
+|---------|------|
+|Min|-7.222|
+|1Q|-1.899|
+|median|0.190|
+|3Q|1.723|
+|Max|5.323|
+
+based on the model included 51 observation, we can see the unemployment rate adn the value is linearly correlated, with one increase in percentage of the average unemployment rate, there expected to be 1 decrease in the value, which indicate that higher unemployment rate will result in better(lower) mental health value
+
+
+### log-level model:
+```{r,echo=FALSE}
+library(dplyr)
+library(ggplot2)
+library(broom)
+library(knitr)
+
+
+
+data <- readRDS("dataset/cleaned_dataset.rds")
+unemployment_data <- readRDS("dataset/clean_unemployment.rds")
+
+filtered_data <- data %>%
+  filter(Group == "By State", 
+         Indicator == "Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks") %>%
+  group_by(State) %>%
+  summarize(Average_Value = mean(Value, na.rm = TRUE))
+
+
+unemployment_data_state <- unemployment_data %>%
+  rename(State = state) %>%
+  group_by(State) %>%
+  summarize(Average_Unemployment = mean(Average, na.rm = TRUE))
+
+combined_data <- left_join(filtered_data, unemployment_data_state, by = "State")
+
+combined_data <- combined_data %>%
+  mutate(Log_Average_Value = log(Average_Value))
+
+model <- lm(Log_Average_Value ~ Average_Unemployment, data = combined_data)
+
+
+ggplot(combined_data, aes(x = Average_Unemployment, y = Log_Average_Value)) +
+  geom_point() +
+  geom_smooth(method = "lm", col = "blue") +
+  labs(title = "Linear Model Fit of Unemployment Rate vs. Log Mental Health Indicator Value",
+       x = "Average Unemployment Rate (%)",
+       y = "Log Average Value of Mental Health Indicator") +
+  theme_minimal()
+model <- lm(Average_Value ~ Average_Unemployment, data = combined_data)
+
+qqnorm(residuals(model), main = "QQ Plot of Residuals")
+qqline(residuals(model), col = "red", lwd = 2)
+
+png("QQ_Plot.png")
+qqnorm(residuals(model), main = "QQ Plot of Residuals")
+qqline(residuals(model), col = "red", lwd = 2)
+dev.off()
+
+```
+|Coefficients|estimate|std.error|t value|Pr(>|t|)|
+|------------|-------|----------|-------|-----------------------------|
+|intercept|3.47042|0.06330|54.822| < 2e-16 ***|
+|Average_Unemployment|-0.04233|0.01187|-3.565|0.000823 ***|
+$Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1$
+
+|stat|value|
+|--|---|
+|Multiple R-squared|0.206|
+|Adjusted R-squared|0.1898 |
+|F-statistic| 12.71|
+|p-value |0.0008228|
+
+|Residuals|value|
+|---------|------|
+|Min|-0.34497|
+|1Q|-0.07343|
+|median|0.01763|
+|3Q|0.06367 |
+|Max|0.19794 |
+based on the plot and summary of the model, log-level models seems work better than level-level model, so we do more advanced check on this model.
+it indicated that one percent in crease in unemployment rate will cause the value decrease by 0.04233%.
+Also, we graph the qq plot, and see most of the point are around the line, indicated that most the residual is approximatelly normally distributed.
+
+
+## sex and gender
+```{r}
+
+
+
+```
+
+
+

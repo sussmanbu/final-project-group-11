@@ -249,6 +249,7 @@ by time across the USA:
 ```{r, echo=FALSE}
 library(dplyr)
 suppressPackageStartupMessages(library(lubridate))
+options(warn = -1)
 
 filtered_data <- data %>%
   filter(Group == "National Estimate", 
